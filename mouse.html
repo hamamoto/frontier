@@ -102,17 +102,17 @@
 	blurFilter1.blurY = blurringY;
 	richText.filters = [blurFilter1];
 
-	// stage
-	//     .on('mousemove', onPointerMove)
-	//     .on('touchmove', onPointerMove);
+	stage
+	    .on('mousemove', onPointerMove)
+	    .on('touchmove', onPointerMove);
 
-	// function onPointerMove(eventData)
-	// {
+	function onPointerMove(eventData)
+	{
 
-	//     displacementSprite.x = eventData.data.global.x - 100;
-	//     displacementSprite.y = eventData.data.global.y - displacementSprite.height /2;
+	    displacementSprite.x = eventData.data.global.x - 100;
+	    displacementSprite.y = eventData.data.global.y - displacementSprite.height /2;
 
-	// }
+	}
 
 	var count = 0;
 
