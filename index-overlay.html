@@ -11,20 +11,32 @@
 
 			font: 28px/36px 'Playground-Regular';
 		}
+
+		canvas {
+			transition: all 500ms;
+		}
+
+		a { 
+			color: blue;
+			text-decoration: none;
+		}
+
 		#content {
 			width: 800px;
 			height: auto;
-
 			margin: 0px auto;
 			background: transparent;
-			opacity: 0;
-
+			font-size: 70px;
+			line-height: 82px;
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-400px, -281px);
-
+			transform: translate(-400px, -100px);
 			z-index: 1000000;
+
+			opacity: 0;
+			transition: all 500ms;
+
 		}
 
 		.show #content {
@@ -32,7 +44,7 @@
 		}
 
 		.show canvas {
-			opacity: .5;
+			opacity: 0;
 		}
 
 	</style>
@@ -42,6 +54,27 @@
 </head>
 <body>
 	<script>
+
+
+
+	function getUrlParameter(sParam)
+	{
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++) 
+	    {
+	        var sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] == sParam) 
+	        {
+	            return sParameterName[1];
+	        }
+	    }
+	}  
+
+	var blurringX = getUrlParameter('blurX');
+	var blurringY = getUrlParameter('blurY');
+	var displacementvalue = getUrlParameter('displace');
+	var backgroundtype = getUrlParameter('type');	
 
 	var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0xffffff});
 	renderer.view.style.position = 'absolute';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
@@ -65,34 +98,24 @@
 	displacementFilter.scale.y = 10;
 
 	var style = {
-	    font : 'bold 200px Playground-Regular',
+	    font : 'bold 70px Playground-Regular',
 	    fill : '#000',
 	    wordWrap : true,
-	    wordWrapWidth : 440,
+	    wordWrapWidth : 800,
+	   	padding : 20,
+
 	};
 
-	var richText = new PIXI.Text('Frontier',style);
+	var richText = new PIXI.Text('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',style);
 	richText.x = 0;
 	richText.y = 200;
 
 	container.addChild(richText);
 
 	var blurFilter1 = new PIXI.filters.BlurFilter();
-	blurFilter1.blurX = 20;
-	blurFilter1.blurY = 20;
+	blurFilter1.blurX = blurringX;
+	blurFilter1.blurY = blurringY;
 	richText.filters = [blurFilter1];
-
-	stage
-	    .on('mousemove', onPointerMove)
-	    .on('touchmove', onPointerMove);
-
-	function onPointerMove(eventData)
-	{
-
-	    displacementSprite.x = eventData.data.global.x - 100;
-	    displacementSprite.y = eventData.data.global.y - displacementSprite.height /2;
-
-	}
 
 	var count = 0;
 
@@ -106,8 +129,8 @@
     	// blurFilter1.blur = 10 * (blurAmount);
 
 
-		displacementSprite.x = count * 20
-		displacementSprite.y = count * 20
+		displacementSprite.x = Math.cos(count) * displacementvalue
+		displacementSprite.y = count * displacementvalue
 
 	    renderer.render(stage);
 
@@ -117,18 +140,17 @@
 
 
 	$(document).ready(function(){
-		$('body').click(function(){
-			$('body').toggleClass('show');
-
+		$('body').hover(function(){
+			$('body').addClass('show');
+		}, function() {
+			$('body').removeClass('show');
 		});
 	});
 
 	</script>
 
 	<div id="content">
-		<p>
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. 
-		</p>
+		Lorem ipsum <a href="http://google.com">dolor sit amet</a>, consectetuer adipiscing elit.
 	</div>
 
 	</body>

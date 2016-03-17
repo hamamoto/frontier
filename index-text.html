@@ -43,6 +43,28 @@
 <body>
 	<script>
 
+
+
+	function getUrlParameter(sParam)
+	{
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++) 
+	    {
+	        var sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] == sParam) 
+	        {
+	            return sParameterName[1];
+	        }
+	    }
+	}  
+
+	var blurringX = getUrlParameter('blurX');
+	var blurringY = getUrlParameter('blurY');
+	var displacementvalue = getUrlParameter('displace');
+	var backgroundtype = getUrlParameter('type');	
+	var typesize = getUrlParameter('size');		
+
 	var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0xffffff});
 	renderer.view.style.position = 'absolute';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
 	document.body.appendChild(renderer.view);
@@ -65,34 +87,36 @@
 	displacementFilter.scale.y = 10;
 
 	var style = {
-	    font : 'bold 200px Playground-Regular',
+	    font : 'bold '+typesize+'px Playground-Regular',
 	    fill : '#000',
 	    wordWrap : true,
 	    wordWrapWidth : 440,
+	    padding : 50,
+
 	};
 
-	var richText = new PIXI.Text('Frontier',style);
+	var richText = new PIXI.Text(backgroundtype,style);
 	richText.x = 0;
 	richText.y = 200;
 
 	container.addChild(richText);
 
 	var blurFilter1 = new PIXI.filters.BlurFilter();
-	blurFilter1.blurX = 20;
-	blurFilter1.blurY = 20;
+	blurFilter1.blurX = blurringX;
+	blurFilter1.blurY = blurringY;
 	richText.filters = [blurFilter1];
 
-	stage
-	    .on('mousemove', onPointerMove)
-	    .on('touchmove', onPointerMove);
+	// stage
+	//     .on('mousemove', onPointerMove)
+	//     .on('touchmove', onPointerMove);
 
-	function onPointerMove(eventData)
-	{
+	// function onPointerMove(eventData)
+	// {
 
-	    displacementSprite.x = eventData.data.global.x - 100;
-	    displacementSprite.y = eventData.data.global.y - displacementSprite.height /2;
+	//     displacementSprite.x = eventData.data.global.x - 100;
+	//     displacementSprite.y = eventData.data.global.y - displacementSprite.height /2;
 
-	}
+	// }
 
 	var count = 0;
 
@@ -106,8 +130,8 @@
     	// blurFilter1.blur = 10 * (blurAmount);
 
 
-		displacementSprite.x = count * 20
-		displacementSprite.y = count * 20
+		displacementSprite.x = Math.cos(count) * displacementvalue
+		displacementSprite.y = count * displacementvalue
 
 	    renderer.render(stage);
 

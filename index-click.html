@@ -11,29 +11,11 @@
 
 			font: 28px/36px 'Playground-Regular';
 		}
-		#content {
-			width: 800px;
-			height: auto;
 
-			margin: 0px auto;
-			background: transparent;
-			opacity: 0;
-
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-400px, -281px);
-
-			z-index: 1000000;
+		canvas {
+			transition: all 500ms;
 		}
 
-		.show #content {
-			opacity: 1;
-		}
-
-		.show canvas {
-			opacity: .5;
-		}
 
 	</style>
 	<script src="js/dat.gui.min.js"></script>	
@@ -86,19 +68,31 @@
 	displacementFilter.scale.y = 10;
 
 	var style = {
-	    font : 'bold 200px Playground-Regular',
+	    font : 'bold 70px Playground-Regular',
 	    fill : '#000',
 	    wordWrap : true,
-	    wordWrapWidth : 440,
-	   	padding : 100,
+	    wordWrapWidth : 800,
+	   	padding : 20,
 
 	};
 
-	var richText = new PIXI.Text('Frontier',style);
+	var richText = new PIXI.Text('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',style);
 	richText.x = 0;
 	richText.y = 200;
 
+	richText.on('mousedown', onDown);
+	richText.on('touchstart', onDown);
+
 	container.addChild(richText);
+
+	function onDown (eventData) {
+
+    	richText.scale.x += 0.3;
+    	richText.scale.y += 0.3;
+    	console.log(richText.scale.x);
+	}
+
+
 
 	var blurFilter1 = new PIXI.filters.BlurFilter();
 	blurFilter1.blurX = blurringX;
@@ -125,22 +119,6 @@
 	    requestAnimationFrame(animate);
 	    
 	}
-
-
-	$(document).ready(function(){
-		$('body').click(function(){
-			$('body').toggleClass('show');
-
-		});
-	});
-
 	</script>
-
-	<div id="content">
-		<p>
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. 
-		</p>
-	</div>
-
 	</body>
 </html>
