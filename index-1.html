@@ -11,32 +11,20 @@
 
 			font: 28px/36px 'Playground-Regular';
 		}
-
-		canvas {
-			transition: all 500ms;
-		}
-
-		a { 
-			color: blue;
-			text-decoration: none;
-		}
-
 		#content {
 			width: 800px;
 			height: auto;
+
 			margin: 0px auto;
 			background: transparent;
-			font-size: 70px;
-			line-height: 82px;
+			opacity: 0;
+
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-400px, -97px);
+			transform: translate(-400px, -281px);
+
 			z-index: 1000000;
-
-			opacity: 0;
-			transition: all 500ms;
-
 		}
 
 		.show #content {
@@ -44,7 +32,7 @@
 		}
 
 		.show canvas {
-			opacity: 0;
+			opacity: .5;
 		}
 
 	</style>
@@ -98,15 +86,15 @@
 	displacementFilter.scale.y = 10;
 
 	var style = {
-	    font : 'bold 70px Playground-Regular',
+	    font : 'bold 200px Playground-Regular',
 	    fill : '#000',
 	    wordWrap : true,
-	    wordWrapWidth : 800,
-	   	padding : 20,
+	    wordWrapWidth : 440,
+	   	padding : 100,
 
 	};
 
-	var richText = new PIXI.Text('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',style);
+	var richText = new PIXI.Text('Frontier',style);
 	richText.x = 0;
 	richText.y = 200;
 
@@ -140,17 +128,18 @@
 
 
 	$(document).ready(function(){
-		$('body').hover(function(){
-			$('body').addClass('show');
-		}, function() {
-			$('body').removeClass('show');
+		$('body').click(function(){
+			$('body').toggleClass('show');
+
 		});
 	});
 
 	</script>
 
 	<div id="content">
-		Lorem ipsum <a href="http://google.com">dolor sit amet</a>, consectetuer adipiscing elit.
+		<p>
+			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. 
+		</p>
 	</div>
 
 	</body>

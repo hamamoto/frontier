@@ -2,40 +2,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Blur Test</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			background-color: #fff;
-
-			font: 28px/36px 'Playground-Regular';
-		}
-		#content {
-			width: 800px;
-			height: auto;
-
-			margin: 0px auto;
-			background: transparent;
-			opacity: 0;
-
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-400px, -281px);
-
-			z-index: 1000000;
-		}
-
-		.show #content {
-			opacity: 1;
-		}
-
-		.show canvas {
-			opacity: .5;
-		}
-
-	</style>
+	<title>Design on the Frontier</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="js/dat.gui.min.js"></script>	
 	<script src="js/pixi-current.js"></script> 
 	<script src="js/jquery.min.js"></script>	
@@ -64,8 +32,9 @@
 	var displacementvalue = getUrlParameter('displace');
 	var backgroundtype = getUrlParameter('type');	
 
-	var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0xffffff});
-	renderer.view.style.position = 'absolute';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
+	var myView = document.getElementById('large-f');
+	var renderer = PIXI.autoDetectRenderer(400, 600,{transparent: true});
+	renderer.view.style.position = 'fixed';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
 	document.body.appendChild(renderer.view);
 
 	// create the root of the scene graph
@@ -86,7 +55,7 @@
 	displacementFilter.scale.y = 10;
 
 	var style = {
-	    font : 'bold 200px Playground-Regular',
+	    font : 'bold 600px Playground-Bold',
 	    fill : '#000',
 	    wordWrap : true,
 	    wordWrapWidth : 440,
@@ -94,9 +63,9 @@
 
 	};
 
-	var richText = new PIXI.Text('Frontier',style);
+	var richText = new PIXI.Text('F',style);
 	richText.x = 0;
-	richText.y = 200;
+	richText.y = 20;
 
 	container.addChild(richText);
 
@@ -135,11 +104,37 @@
 	});
 
 	</script>
-
+	<h1 id="logo">Design on the Frontier</h1>
 	<div id="content">
-		<p>
-			Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. 
-		</p>
+		<!-- about -->
+		<h2>About</h2>
+		<p>Design on the Frontier asks the question: What lies beyond the current scope of design education? What methods, media, or matters lie waiting in the wilderness beyond the limit of our current understanding of the field? Design on the Frontier will look beyond the horizon in both content and format, proposing that ‘explorers’ suggest papers, workshops, and activities that speculate on the future of Graphic Design, and the education of future graphic designers.</p>
+		<p>This conference interrogates the speculative future of graphic design and the education of the future graphic designer. The landscape of design is changing quickly. As the field embraces an increasingly amorphous definition of practice and an ever-expanding toolset, educators have a unique opportunity to both navigate and define this frontier space. Beyond market forces and the relative shelter of our institutions, setting aside the present allows for speculation on the collective future we want to build, rather than a static system that feels inevitable.</p>
+		<p>The format of the conference, reader, and website articulates this forward-looking spirit. Instead of calling for papers, we call for ideas, thought experiments, and proposals. Motivated by a desire to provoke and energize, static presentations are instead replaced by highly participatory small events, and submissions are encouraged to reflect a broader range of investigation, from workshops and discussions, to performance, film screening, pop-up exhibition, and design fiction. More akin to a fair than a conference, this network of satellite events encourages physical activity, promotes an optimistic esprit de corps, and asks participants to proactively define the future of design education.</p>
+		
+		<!-- call for papers -->
+		<h2 class="section">Call</h2>
+		<p>Final Call goes here</p>
+
+		<!-- speakers -->
+		<h2 class="section">Speakers</h2>
+		<p>Coming Soon</p>
+
+		<!-- Key dates -->
+		<h2 class="section">Dates</h2>
+		<ul>
+			<li>Call for proposals (conference): <span class="date">04.10.16</span></li>
+			<li>Application deadline (conference): <span class="date">04.10.16</span></li>
+			<li>Application Deadline(s) (reader): <span class="date">04.10.16</span></li>
+			<li>Registration Opens: <span class="date">04.10.16</span></li>
+			<li>Earlybird Rate ends: <span class="date">04.10.16</span></li>
+			<li>Registration closes: <span class="date">04.10.16</span></li>
+			<li>Conference: <span class="date">04.10.16</span></li>
+
+		<!-- Key dates -->
+		<h2 class="section">Submit</h2>
+		<a href="#">Submit a Proposal</a>
+
 	</div>
 
 	</body>
