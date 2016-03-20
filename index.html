@@ -12,6 +12,35 @@
 	<script>
 
 
+	/* image test */
+
+	var myView = document.getElementById('speaker');
+	var smallrenderer = PIXI.autoDetectRenderer(350, 350, {view: myView});
+	document.body.appendChild(smallrenderer.view);
+
+	// create the root of the scene graph
+	var smallstage = new PIXI.Container();
+
+	var smallcontainer = new PIXI.Container();
+	smallstage.addChild(smallcontainer);
+
+	// create a texture from an image path
+	var smalltexture = PIXI.Texture.fromImage('joe.jpg');
+
+	// create a new Sprite using the texture
+	var speaker = new PIXI.Sprite(smalltexture);
+
+	// center the sprite's anchor point
+	speaker.anchor.x = 0;
+	speaker.anchor.y = 0;
+
+	// move the sprite to the center of the screen
+	speaker.position.x = 0;
+	speaker.position.y = 0;
+
+	smallcontainer.addChild(speaker);
+
+	/* type test */
 
 	function getUrlParameter(sParam)
 	{
@@ -30,9 +59,7 @@
 	var blurringX = getUrlParameter('blurX');
 	var blurringY = getUrlParameter('blurY');
 	var displacementvalue = getUrlParameter('displace');
-	var backgroundtype = getUrlParameter('type');	
 
-	var myView = document.getElementById('large-f');
 	var renderer = PIXI.autoDetectRenderer(400, 600,{transparent: true});
 	renderer.view.style.position = 'fixed';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
 	document.body.appendChild(renderer.view);
@@ -40,19 +67,8 @@
 	// create the root of the scene graph
 	var stage = new PIXI.Container();
 
-	stage.interactive = true;
-
 	var container = new PIXI.Container();
 	stage.addChild(container);
-
-
-	var displacementSprite = PIXI.Sprite.fromImage('displace-texture.png');
-	var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
-	stage.addChild(displacementSprite);
-	container.filters = [displacementFilter];
-
-	displacementFilter.scale.x = 10;
-	displacementFilter.scale.y = 10;
 
 	var style = {
 	    font : 'bold 600px Playground-Bold',
@@ -69,13 +85,39 @@
 
 	container.addChild(richText);
 
+	/* blurring texture */
+
+	var displacementSprite = PIXI.Sprite.fromImage('displace-texture.png');
+	var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+	var smalldisplacementSprite = PIXI.Sprite.fromImage('displace-texture.png');
+	var smalldisplacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+	/* add to type */
+	stage.addChild(displacementSprite);
+	container.filters = [displacementFilter];
+
+	/* add to image */
+	smallcontainer.filters = [smalldisplacementFilter];
+
+	displacementFilter.scale.x = 20;
+	displacementFilter.scale.y = 20;
+
+	smalldisplacementFilter.scale.x = 12;
+	smalldisplacementFilter.scale.y = 12;
+
 	var blurFilter1 = new PIXI.filters.BlurFilter();
 	blurFilter1.blurX = blurringX;
 	blurFilter1.blurY = blurringY;
+
+	// blur text
 	richText.filters = [blurFilter1];
 
-	var count = 0;
+	// blur image 
+	speaker.filters = [blurFilter1];
 
+
+	var count = 0;
 	animate();
 
 	function animate()
@@ -89,7 +131,11 @@
 		displacementSprite.x = Math.cos(count) * displacementvalue
 		displacementSprite.y = count * displacementvalue
 
+		smalldisplacementSprite.x = Math.cos(count) * displacementvalue
+		smalldisplacementSprite.y = count * displacementvalue		
+
 	    renderer.render(stage);
+	    smallrenderer.render(smallstage);
 
 	    requestAnimationFrame(animate);
 	    
@@ -119,7 +165,8 @@
 		<!-- speakers -->
 		<h2 class="section">Speakers</h2>
 		<p>Coming Soon</p>
-
+		<canvas id="speaker" width="350" height="350"><canvas>
+		
 		<!-- Key dates -->
 		<h2 class="section">Dates</h2>
 		<ul>
