@@ -1,0 +1,188 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Design on the Frontier</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script src="js/dat.gui.min.js"></script>	
+	<script src="js/pixi-current.js"></script> 
+	<script src="js/jquery.min.js"></script>	
+</head>
+<body>
+	<script>
+
+
+	/* image test */
+
+	var myView = document.getElementById('speaker');
+	var smallrenderer = PIXI.autoDetectRenderer(350, 350, {view: myView});
+	document.body.appendChild(smallrenderer.view);
+
+	// create the root of the scene graph
+	var smallstage = new PIXI.Container();
+
+	var smallcontainer = new PIXI.Container();
+	smallstage.addChild(smallcontainer);
+
+	// create a texture from an image path
+	var smalltexture = PIXI.Texture.fromImage('joe.jpg');
+
+	// create a new Sprite using the texture
+	var speaker = new PIXI.Sprite(smalltexture);
+
+	// center the sprite's anchor point
+	speaker.anchor.x = 0;
+	speaker.anchor.y = 0;
+
+	// move the sprite to the center of the screen
+	speaker.position.x = 0;
+	speaker.position.y = 0;
+
+	smallcontainer.addChild(speaker);
+
+	/* type test */
+
+	function getUrlParameter(sParam)
+	{
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++) 
+	    {
+	        var sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] == sParam) 
+	        {
+	            return sParameterName[1];
+	        }
+	    }
+	}  
+
+	var blurringX = getUrlParameter('blurX');
+	var blurringY = getUrlParameter('blurY');
+	var displacementvalue = getUrlParameter('displace');
+
+	var renderer = PIXI.autoDetectRenderer(400, 600,{transparent: true});
+	renderer.view.style.position = 'fixed';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
+	document.body.appendChild(renderer.view);
+
+	// create the root of the scene graph
+	var stage = new PIXI.Container();
+
+	var container = new PIXI.Container();
+	stage.addChild(container);
+
+	var style = {
+	    font : 'bold 600px Playground-Bold',
+	    fill : '#000',
+	    wordWrap : true,
+	    wordWrapWidth : 440,
+	   	padding : 100,
+
+	};
+
+	var richText = new PIXI.Text('F',style);
+	richText.x = 0;
+	richText.y = 20;
+
+	container.addChild(richText);
+
+	/* blurring texture */
+
+	var displacementSprite = PIXI.Sprite.fromImage('displace-texture.png');
+	var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+	var smalldisplacementSprite = PIXI.Sprite.fromImage('displace-texture.png');
+	var smalldisplacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+
+	/* add to type */
+	stage.addChild(displacementSprite);
+	container.filters = [displacementFilter];
+
+	/* add to image */
+	smallcontainer.filters = [smalldisplacementFilter];
+
+	displacementFilter.scale.x = 20;
+	displacementFilter.scale.y = 20;
+
+	smalldisplacementFilter.scale.x = 12;
+	smalldisplacementFilter.scale.y = 12;
+
+	var blurFilter1 = new PIXI.filters.BlurFilter();
+	blurFilter1.blurX = blurringX;
+	blurFilter1.blurY = blurringY;
+
+	// blur text
+	richText.filters = [blurFilter1];
+
+	// blur image 
+	speaker.filters = [blurFilter1];
+
+
+	var count = 0;
+	animate();
+
+	function animate()
+	{
+	    count += 0.05;
+
+	    // var blurAmount = Math.cos(count) ;
+    	// blurFilter1.blur = 10 * (blurAmount);
+
+
+		displacementSprite.x = Math.cos(count) * displacementvalue
+		displacementSprite.y = count * displacementvalue
+
+		smalldisplacementSprite.x = Math.cos(count) * displacementvalue
+		smalldisplacementSprite.y = count * displacementvalue		
+
+	    renderer.render(stage);
+	    smallrenderer.render(smallstage);
+
+	    requestAnimationFrame(animate);
+	    
+	}
+
+
+	$(document).ready(function(){
+		$('body').click(function(){
+			$('body').toggleClass('show');
+
+		});
+	});
+
+	</script>
+	<h1 id="logo">Design on the Frontier</h1>
+	<div id="content">
+		<!-- about -->
+		<h2>About</h2>
+		<p>Design on the Frontier asks the question: What lies beyond the current scope of design education? What methods, media, or matters lie waiting in the wilderness beyond the limit of our current understanding of the field? Design on the Frontier will look beyond the horizon in both content and format, proposing that ‘explorers’ suggest papers, workshops, and activities that speculate on the future of Graphic Design, and the education of future graphic designers.</p>
+		<p>This conference interrogates the speculative future of graphic design and the education of the future graphic designer. The landscape of design is changing quickly. As the field embraces an increasingly amorphous definition of practice and an ever-expanding toolset, educators have a unique opportunity to both navigate and define this frontier space. Beyond market forces and the relative shelter of our institutions, setting aside the present allows for speculation on the collective future we want to build, rather than a static system that feels inevitable.</p>
+		<p>The format of the conference, reader, and website articulates this forward-looking spirit. Instead of calling for papers, we call for ideas, thought experiments, and proposals. Motivated by a desire to provoke and energize, static presentations are instead replaced by highly participatory small events, and submissions are encouraged to reflect a broader range of investigation, from workshops and discussions, to performance, film screening, pop-up exhibition, and design fiction. More akin to a fair than a conference, this network of satellite events encourages physical activity, promotes an optimistic esprit de corps, and asks participants to proactively define the future of design education.</p>
+		
+		<!-- call for papers -->
+		<h2 class="section">Call</h2>
+		<p>Final Call goes here</p>
+
+		<!-- speakers -->
+		<h2 class="section">Speakers</h2>
+		<p>Coming Soon</p>
+		<canvas id="speaker" width="350" height="350"><canvas>
+		
+		<!-- Key dates -->
+		<h2 class="section">Dates</h2>
+		<ul>
+			<li>Call for proposals (conference): <span class="date">04.10.16</span></li>
+			<li>Application deadline (conference): <span class="date">04.10.16</span></li>
+			<li>Application Deadline(s) (reader): <span class="date">04.10.16</span></li>
+			<li>Registration Opens: <span class="date">04.10.16</span></li>
+			<li>Earlybird Rate ends: <span class="date">04.10.16</span></li>
+			<li>Registration closes: <span class="date">04.10.16</span></li>
+			<li>Conference: <span class="date">04.10.16</span></li>
+
+		<!-- Key dates -->
+		<h2 class="section">Submit</h2>
+		<a href="#">Submit a Proposal</a>
+
+	</div>
+
+	</body>
+</html>
