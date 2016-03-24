@@ -51,21 +51,52 @@ h1#logo {
 	height: auto;
 
 	margin: 0px auto;
-	padding-top: 66vh;
+	padding-top: 88vh;
 	padding-bottom: 0vh;
 	background: transparent;
-	text-align: center;
+	text-align: left;
 	opacity: 1;
 	z-index: 1;
 }
 
-h2 {
-	font-size: 16px;
-	line-height: 24px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-}
+h1 {
+    color: black;
+    display: block;
+    margin:0px;
+    font: bold 70px ;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: left;
+   }
 
+   h2 {
+    color: black;
+    display: block;
+    margin:0px;
+    font: bold 48px ;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: left;
+   }
+
+   h3 {
+    color: black;
+    display: block;
+    margin:0px;
+    font: bold 36px ;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: left;
+   }
+
+   p {
+    color: black;
+    display: block;
+    margin:0px;
+    font: 22px ;
+    text-indent: 50px;
+    text-align: left;
+   }
 .section {
 	margin-top: 200px;
 }
