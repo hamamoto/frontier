@@ -11,7 +11,7 @@
 <body>
 <script>
 
-	// get variables from the url
+	/* get variables from the url */
 	function getUrlParameter(sParam)
 	{
 	    var sPageURL = window.location.search.substring(1);
@@ -29,42 +29,42 @@
 	var blurringY = getUrlParameter('blurY');
 	var displacementvalue = getUrlParameter('displace');
 	
-	// creating the 'renderer' for the image -- change the dimensions to match the dimensions of your image
+	/* creating the 'renderer' for the image -- change the dimensions to match the dimensions of your image */
 	var renderer = PIXI.autoDetectRenderer(1200, 387,{transparent: true});
 	
-	// positioning it fixed to the middle of the screen
+	/* positioning it fixed to the middle of the screen */
 	renderer.view.style.position = 'fixed';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
 	document.body.appendChild(renderer.view);
 	
-	// create the root of the scene graph
+	/* create the root of the scene graph */
 	var stage = new PIXI.Container();
 	var container = new PIXI.Container();
 	stage.addChild(container);
 	
-	// adding the image to the 'container'
+	/* adding the image to the 'container' */
 	var displacementSprite = PIXI.Sprite.fromImage('displace-texture.png');
 	var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
 	stage.addChild(displacementSprite);
 
-	// adding the displacement filter to the container
+	/* adding the displacement filter to the container */
 	container.filters = [displacementFilter];
 
-	// adjusting the scale of the displacement filter. change these values to get a finer or more broad movement
+	/* adjusting the scale of the displacement filter. change these values to get a finer or more broad movement */
 	displacementFilter.scale.x = 20;
 	displacementFilter.scale.y = 20;
 	
-	// adding the image
+	/* adding the image */
 	var texture = PIXI.Texture.fromImage('frontier.png');
 	var frontierText = new PIXI.Sprite(texture);
 	container.addChild(frontierText);
 
-	// applying blur
+	/* applying blur */
 	var blurFilter1 = new PIXI.filters.BlurFilter();
 	blurFilter1.blurX = blurringX;
 	blurFilter1.blurY = blurringY;
 	frontierText.filters = [blurFilter1];
 	
-	// creating the animation
+	/* creating the animation */
 	var count = 0;
 	animate();
 	
@@ -79,7 +79,7 @@
 	    
 	}
 
-	// toggling a class to move the text above and below the image
+	/* toggling a class to move the text above and below the image */
 	$(document).ready(function(){
 		$('body').click(function(){
 			$('body').toggleClass('show');
