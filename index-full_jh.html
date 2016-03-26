@@ -3,27 +3,27 @@
 <html>
 <head>
 	<title>Frontier</title>
-	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="main_jh.css">
 	<script src="js/dat.gui.min.js"></script>	
 	<script src="js/pixi-current.js"></script> 
 	<script src="js/jquery.min.js"></script>	
 </head>
 <body>
-<script>
+	<script>
 
 	// get variables from the url
 	function getUrlParameter(sParam)
 	{
-	    var sPageURL = window.location.search.substring(1);
-	    var sURLVariables = sPageURL.split('&');
-	    for (var i = 0; i < sURLVariables.length; i++) 
-	    {
-	        var sParameterName = sURLVariables[i].split('=');
-	        if (sParameterName[0] == sParam) 
-	        {
-	            return sParameterName[1];
-	        }
-	    }
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) 
+		{
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) 
+			{
+				return sParameterName[1];
+			}
+		}
 	}  
 	var blurringX = getUrlParameter('blurX');
 	var blurringY = getUrlParameter('blurY');
@@ -70,13 +70,13 @@
 	
 	function animate()
 	{
-	    count += 0.05;
+		count += 0.05;
 
 		displacementSprite.x = Math.cos(count) * displacementvalue
 		displacementSprite.y = count * displacementvalue
-	    renderer.render(stage);
-	    requestAnimationFrame(animate);
-	    
+		renderer.render(stage);
+		requestAnimationFrame(animate);
+
 	}
 
 	// toggling a class to move the text above and below the image
@@ -87,40 +87,42 @@
 	});
 
 
-</script>
-<!-- <h1 id="logo">Frontier</h1> -->
-<div id="content">
-	<!-- about -->
-	<h2>About</h2>
-	<p>Frontier asks the question: What lies beyond the current scope of design education? What methods, media, or matters lie waiting in the wilderness beyond the limit of our current understanding of the field? Design on the Frontier will look beyond the horizon in both content and format, proposing that ‘explorers’ suggest papers, workshops, and activities that speculate on the future of Graphic Design, and the education of future graphic designers.</p>
-	<p>This conference interrogates the speculative future of graphic design and the education of the future graphic designer. The landscape of design is changing quickly. As the field embraces an increasingly amorphous definition of practice and an ever-expanding toolset, educators have a unique opportunity to both navigate and define this frontier space. Beyond market forces and the relative shelter of our institutions, setting aside the present allows for speculation on the collective future we want to build, rather than a static system that feels inevitable.</p>
-	<p>The format of the conference, reader, and website articulates this forward-looking spirit. Instead of calling for papers, we call for ideas, thought experiments, and proposals. Motivated by a desire to provoke and energize, static presentations are instead replaced by highly participatory small events, and submissions are encouraged to reflect a broader range of investigation, from workshops and discussions, to performance, film screening, pop-up exhibition, and design fiction. More akin to a fair than a conference, this network of satellite events encourages physical activity, promotes an optimistic esprit de corps, and asks participants to proactively define the future of design education.</p>
-	
-	<!-- call for papers -->
-	<h2 class="section">Call</h2>
-	<p>Final Call goes here</p>
+	</script>
+	<!-- <h1 id="logo">Frontier</h1> -->
+	<div id="content">
+		<!-- about -->
+		<div class = "about">
+			<h2>About</h2>
+			<p>Frontier asks the question: What lies beyond the current scope of design education? What methods, media, or matters lie waiting in the wilderness beyond the limit of our current understanding of the field? Design on the Frontier will look beyond the horizon in both content and format, proposing that ‘explorers’ suggest papers, workshops, and activities that speculate on the future of Graphic Design, and the education of future graphic designers.</p>
+			<p>This conference interrogates the speculative future of graphic design and the education of the future graphic designer. The landscape of design is changing quickly. As the field embraces an increasingly amorphous definition of practice and an ever-expanding toolset, educators have a unique opportunity to both navigate and define this frontier space. Beyond market forces and the relative shelter of our institutions, setting aside the present allows for speculation on the collective future we want to build, rather than a static system that feels inevitable.</p>
+			<p>The format of the conference, reader, and website articulates this forward-looking spirit. Instead of calling for papers, we call for ideas, thought experiments, and proposals. Motivated by a desire to provoke and energize, static presentations are instead replaced by highly participatory small events, and submissions are encouraged to reflect a broader range of investigation, from workshops and discussions, to performance, film screening, pop-up exhibition, and design fiction. More akin to a fair than a conference, this network of satellite events encourages physical activity, promotes an optimistic esprit de corps, and asks participants to proactively define the future of design education.</p>
+		</div>
 
-	<!-- speakers -->
-	<h2 class="section">Speakers</h2>
-	<p>Coming Soon</p>
-	<canvas id="speaker" width="350" height="350"><canvas>
-	
-	<!-- Key dates -->
-	<h2 class="section">Dates</h2>
-	<ul>
-		<li>Call for proposals (conference): <span class="date">04.10.16</span></li>
-		<li>Application deadline (conference): <span class="date">04.10.16</span></li>
-		<li>Application Deadline(s) (reader): <span class="date">04.10.16</span></li>
-		<li>Registration Opens: <span class="date">04.10.16</span></li>
-		<li>Earlybird Rate ends: <span class="date">04.10.16</span></li>
-		<li>Registration closes: <span class="date">04.10.16</span></li>
-		<li>Conference: <span class="date">04.10.16</span></li>
+		<!-- call for papers -->
+		<h2 class="section">Call</h2>
+		<p>Final Call goes here</p>
 
-	<!-- Key dates -->
-	<h2 class="section">Submit</h2>
-	<a href="#">Submit a Proposal</a>
+		<!-- speakers -->
+		<h2 class="section">Speakers</h2>
+		<p>Coming Soon</p>
+		<canvas id="speaker" width="350" height="350"><canvas>
 
-</div>
+			<!-- Key dates -->
+			<h2 class="section">Dates</h2>
+			<ul>
+				<li>Call for proposals (conference): <span class="date">04.10.16</span></li>
+				<li>Application deadline (conference): <span class="date">04.10.16</span></li>
+				<li>Application Deadline(s) (reader): <span class="date">04.10.16</span></li>
+				<li>Registration Opens: <span class="date">04.10.16</span></li>
+				<li>Earlybird Rate ends: <span class="date">04.10.16</span></li>
+				<li>Registration closes: <span class="date">04.10.16</span></li>
+				<li>Conference: <span class="date">04.10.16</span></li>
 
-</body>
-</html>
+				<!-- Key dates -->
+				<h2 class="section">Submit</h2>
+				<a href="#">Submit a Proposal</a>
+
+			</div>
+
+		</body>
+		</html>
