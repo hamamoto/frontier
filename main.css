@@ -39,7 +39,7 @@ a {
 }
 
 canvas {
-	z-index: 1000;
+	z-index: 0;
 	opacity: .9;
     transition: all 300ms;	
 }
@@ -59,9 +59,45 @@ h1#logo {
 	padding-top: 80vh;
 	padding-bottom: 0vh;
 	background: transparent;
-	text-align: left;
+	text-align: center;
 	opacity: 1;
 	z-index: 1;
+}
+
+
+
+
+
+
+#callBtn{
+   
+    border: 5px solid cyan;
+    color:cyan;
+    z-index:100;
+    position:fixed;
+    left: 350px;
+    top:250px;
+    width:200px;
+    height:100px;
+    -ms-transform: rotate(-45deg); /* IE 9 */
+        -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+        transform: rotate(-45deg);
+}
+
+#callBtn h2{
+    
+    padding-top: 25px;
+     color:cyan;
+     text-align: center;
+}
+
+#callBtn:hover{
+ border: 5px solid yellow;
+color:yellow;   
+}
+
+#callBtn h2:hover{
+     color:yellow;
 }
 
 h1 {
