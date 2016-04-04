@@ -19,6 +19,10 @@
 		return ($(window).width() <= 600 )
 	}	
 
+	function isTablet(){
+		return ($(window).width() <= 1024 && $(window).width() > 600 )
+	}	
+
 	// get variables from the url
 	function getUrlParameter(sParam){
 	    var sPageURL = window.location.search.substring(1);
@@ -39,6 +43,8 @@
 	// creating the 'renderer' for the image -- change the dimensions to match the dimensions of your image
 	if ( isMobile() ) {	
 		var renderer = PIXI.autoDetectRenderer(350, 400,{transparent: true});
+	} else if ( isTablet() ) {
+		var renderer = PIXI.autoDetectRenderer(600, 209,{transparent: true});
 	} else {
 		var renderer = PIXI.autoDetectRenderer(1040, 335,{transparent: true});
 	}
@@ -70,6 +76,8 @@
 
 	if ( isMobile() ) {	
 		var texture = PIXI.Texture.fromImage('f.png');
+	} else if ( isTablet() ) {
+		var texture = PIXI.Texture.fromImage('frontier-tablet.png');			
 	} else {
 		var texture = PIXI.Texture.fromImage('frontier.png');	
 	}
