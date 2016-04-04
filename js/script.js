@@ -3,7 +3,7 @@
 $(document).ready(function(){
 
 	  // apply spans
-	  $("h2").lettering();
+	  $("#callBtn h2").lettering();
 
       // hack to get animations to run again
       $(".redraw").click(function() {	
