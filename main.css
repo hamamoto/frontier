@@ -52,7 +52,7 @@ h1#logo {
 }
 
 #content {
-	width: 800px;
+	width: 100%;
 	height: auto;
 
 	margin: 0px auto;
@@ -150,5 +150,13 @@ h1 {
 
 .show #content {
 	z-index: 1000;
+}
+
+@media only screen and (max-width : 667px) { 
+
+	#content {
+		width: 100%;
+	}
+
 }
 

@@ -3,7 +3,11 @@
 <html>
 <head>
 	<title>Frontier</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" type="text/css" href="main.css">
+
 	<script src="js/dat.gui.min.js"></script>	
 	<script src="js/pixi-current.js"></script> 
 	<script src="js/jquery.min.js"></script>	
@@ -11,26 +15,40 @@
 <body>
 	<script>
 
+	function isMobile(){
+		return ($(window).width() <= 600 )
+	}	
+
+	function isTablet(){
+		return ($(window).width() <= 1024 && $(window).width() > 600 )
+	}	
+
 	// get variables from the url
-	function getUrlParameter(sParam)
-	{
-		var sPageURL = window.location.search.substring(1);
-		var sURLVariables = sPageURL.split('&');
-		for (var i = 0; i < sURLVariables.length; i++) 
-		{
-			var sParameterName = sURLVariables[i].split('=');
-			if (sParameterName[0] == sParam) 
-			{
-				return sParameterName[1];
-			}
-		}
+
+	function getUrlParameter(sParam){
+	    var sPageURL = window.location.search.substring(1);
+	    var sURLVariables = sPageURL.split('&');
+	    for (var i = 0; i < sURLVariables.length; i++) 
+	    {
+	        var sParameterName = sURLVariables[i].split('=');
+	        if (sParameterName[0] == sParam) 
+	        {
+	            return sParameterName[1];
+	        }
+	    }
 	}  
 	var blurringX = getUrlParameter('blurX');
 	var blurringY = getUrlParameter('blurY');
 	var displacementvalue = getUrlParameter('displace');
 	
 	// creating the 'renderer' for the image -- change the dimensions to match the dimensions of your image
-	var renderer = PIXI.autoDetectRenderer(1040, 335,{transparent: true});
+	if ( isMobile() ) {	
+		var renderer = PIXI.autoDetectRenderer(350, 400,{transparent: true});
+	} else if ( isTablet() ) {
+		var renderer = PIXI.autoDetectRenderer(600, 209,{transparent: true});
+	} else {
+		var renderer = PIXI.autoDetectRenderer(1040, 335,{transparent: true});
+	}
 	
 	// positioning it fixed to the middle of the screen
 	renderer.view.style.position = 'fixed';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
@@ -54,7 +72,17 @@
 	displacementFilter.scale.y = 20;
 	
 	// adding the image
-	var texture = PIXI.Texture.fromImage('frontier.png');
+
+	console.log($(window).width());
+
+	if ( isMobile() ) {	
+		var texture = PIXI.Texture.fromImage('f.png');
+	} else if ( isTablet() ) {
+		var texture = PIXI.Texture.fromImage('frontier-tablet.png');			
+	} else {
+		var texture = PIXI.Texture.fromImage('frontier.png');	
+	}
+
 	var frontierText = new PIXI.Sprite(texture);
 	container.addChild(frontierText);
 
@@ -78,14 +106,6 @@
 		requestAnimationFrame(animate);
 
 	}
-
-	// // toggling a class to move the text above and below the image
-	// $(document).ready(function(){
-	// 	$('body').click(function(){
-	// 		$('body').toggleClass('show');
-	// 	});
-	// });
-
 
 </script>
 <a href="files/frontier-call-final.pdf">
