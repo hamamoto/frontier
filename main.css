@@ -64,6 +64,11 @@ h1#logo {
 	z-index: 1;
 }
 
+#content a:hover{
+    -webkit-filter: blur(5px);
+    -webkit-transition: -webkit-filter .5s;
+}
+
 
 #callBtn{
    
