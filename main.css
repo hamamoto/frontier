@@ -97,10 +97,12 @@ h1#logo {
 }
 
 #callBtn h2{
-       padding-top: 36px;
+    padding-top: 36px;
     color: cyan;
+    text-decoration: none;
     text-align: center;
-    text-transform: none;
+    text-decoration: none;
+    text-indent: 0px;
     letter-spacing: .05em;
     font-size: 20px;
     font-weight: normal;
@@ -130,9 +132,11 @@ h1 {
     display: block;
     margin:0px;
     padding-bottom: 25px;
-    font-size:36px ;
+    font-size: 22px ;
+    text-indent: 50px;
     line-height: 1.1;
-    text-transform: uppercase;
+    text-decoration: underline;
+    /*text-transform: uppercase;*/
     letter-spacing: -1px;
     text-align: left;
    }
@@ -155,7 +159,17 @@ h1 {
     margin:0px;
     font-size: 22px ;
     line-height: 1.3;
-    text-indent: 50px;
+    text-align: left;
+   }
+
+   #indent  p {
+    font-family: 'playground-Reg';
+    color: black;
+    display: block;
+    margin:0px;
+    font-size: 22px ;
+     text-indent: 50px;
+    line-height: 1.3;
     text-align: left;
    }
 
