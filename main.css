@@ -76,7 +76,7 @@ h1#logo {
     color: cyan;
     z-index: 100;
     position: fixed;
-    left: 380px;
+    left: 25%;
     top: 280px;
     width: 200px;
     height: 120px;
