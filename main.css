@@ -1,6 +1,6 @@
 
 @font-face {
-    font-family: 'playground';
+    font-family: 'playground-Bold';
     src: url('fonts/plaground_bold-webfont.eot');
     src: url('fonts/plaground_bold-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/plaground_bold-webfont.woff2') format('woff2'),
@@ -13,7 +13,7 @@
 }
 
 @font-face {
-    font-family: 'playground';
+    font-family: 'playground-Reg';
     src: url('fonts/plaground_reg_1.1c-webfont.eot');
     src: url('fonts/plaground_reg_1.1c-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/plaground_reg_1.1c-webfont.woff2') format('woff2'),
@@ -30,7 +30,7 @@ body {
 	padding: 0;
 	background-color: #fff;
 
-	font: 18px/24px 'playground';
+	font: 18px/24px 'playground-Reg';
 }
 
 a { 
@@ -51,8 +51,13 @@ h1#logo {
 	margin: 20px auto;
 }
 
+.section{
+    padding-bottom: 100px;
+}
+
+
 #content {
-	width: 100%;
+	width: 60%;
 	height: auto;
 
 	margin: 0px auto;
@@ -65,6 +70,11 @@ h1#logo {
 }
 
 #content a:hover{
+    -webkit-filter: blur(5px);
+    -webkit-transition: -webkit-filter .5s;
+}
+
+#content a h2:hover{
     -webkit-filter: blur(5px);
     -webkit-transition: -webkit-filter .5s;
 }
@@ -104,46 +114,66 @@ h1#logo {
 
 
 h1 {
+    font-family: 'playground-Bold';
     color: black;
     display: block;
     margin:0px;
-    font: bold 70px ;
+    font-size: 70px ;
     text-transform: uppercase;
     letter-spacing: -1px;
     text-align: left;
    }
 
    h2 {
+    font-family: 'playground-Bold';
     color: black;
     display: block;
     margin:0px;
-    font: bold 48px ;
+    padding-bottom: 25px;
+    font-size:36px ;
+    line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: -1px;
     text-align: left;
    }
 
    h3 {
+    font-family: 'playground-Bold';
     color: black;
     display: block;
     margin:0px;
-    font: bold 36px ;
+    font-size:36px ;
     text-transform: uppercase;
     letter-spacing: -1px;
     text-align: left;
    }
 
    p {
+    font-family: 'playground-Reg';
     color: black;
     display: block;
     margin:0px;
-    font: 22px ;
+    font-size: 22px ;
+    line-height: 1.3;
     text-indent: 50px;
     text-align: left;
    }
-.section {
-	margin-top: 200px;
+
+   ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+   }
+
+   li{
+    text-align: left;
+    padding-bottom: 5px;
+   }
+.date{
+    font-family: 'playground-Bold';
+
 }
+   
 
 .show canvas {
 	z-index: 0;
@@ -158,8 +188,20 @@ h1 {
 @media only screen and (max-width : 667px) { 
 
 	#content {
-		width: 100%;
+		width: 80%;
 	}
+
+     p {
+    font-family: 'playground-Reg';
+    
+    color: black;
+    display: block;
+    margin:0px;
+    font-size: 18px ;
+    line-height: 1.3;
+    text-indent: 50px;
+    text-align: left;
+   }
 
 }
 

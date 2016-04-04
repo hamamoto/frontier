@@ -3,126 +3,176 @@
 <html>
 <head>
 	<title>Frontier</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script src="js/dat.gui.min.js"></script>	
 	<script src="js/pixi-current.js"></script> 
-	<script src="js/jquery.min.js"></script>	
-	<script src="js/jquery.lettering.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
+	<script src="js/jquery.min.js"></script>
+	
 </head>
 <body>
-<script>
+	<script>
 
-	/* get variables from the url */
-	function getUrlParameter(sParam)
-	{
-	    var sPageURL = window.location.search.substring(1);
-	    var sURLVariables = sPageURL.split('&');
-	    for (var i = 0; i < sURLVariables.length; i++) 
-	    {
-	        var sParameterName = sURLVariables[i].split('=');
-	        if (sParameterName[0] == sParam) 
-	        {
-	            return sParameterName[1];
-	        }
-	    }
+	function isMobile(){
+		return ($(window).width() <= 600 )
+	}	
+
+	function isTablet(){
+		return ($(window).width() <= 1024 && $(window).width() > 600 )
+	}	
+
+	// get variables from the url
+
+	function getUrlParameter(sParam){
+		var sPageURL = window.location.search.substring(1);
+		var sURLVariables = sPageURL.split('&');
+		for (var i = 0; i < sURLVariables.length; i++) 
+		{
+			var sParameterName = sURLVariables[i].split('=');
+			if (sParameterName[0] == sParam) 
+			{
+				return sParameterName[1];
+			}
+		}
 	}  
 	var blurringX = getUrlParameter('blurX');
 	var blurringY = getUrlParameter('blurY');
 	var displacementvalue = getUrlParameter('displace');
 	
-	/* creating the 'renderer' for the image -- change the dimensions to match the dimensions of your image */
-	var renderer = PIXI.autoDetectRenderer(1200, 387,{transparent: true});
+	// creating the 'renderer' for the image -- change the dimensions to match the dimensions of your image
+	if ( isMobile() ) {	
+		var renderer = PIXI.autoDetectRenderer(350, 400,{transparent: true});
+	} else if ( isTablet() ) {
+		var renderer = PIXI.autoDetectRenderer(600, 209,{transparent: true});
+	} else {
+		var renderer = PIXI.autoDetectRenderer(1040, 335,{transparent: true});
+	}
 	
-	/* positioning it fixed to the middle of the screen */
+	// positioning it fixed to the middle of the screen
 	renderer.view.style.position = 'fixed';renderer.view.style.left = '50%';renderer.view.style.top = '50%';renderer.view.style.transform = 'translate3d( -50%, -50%, 0 )';
 	document.body.appendChild(renderer.view);
 	
-	/* create the root of the scene graph */
+	// create the root of the scene graph
 	var stage = new PIXI.Container();
 	var container = new PIXI.Container();
 	stage.addChild(container);
 	
-	/* adding the image to the 'container' */
+	// adding the image to the 'container'
 	var displacementSprite = PIXI.Sprite.fromImage('displace-texture.png');
 	var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
 	stage.addChild(displacementSprite);
 
-	/* adding the displacement filter to the container */
+	// adding the displacement filter to the container
 	container.filters = [displacementFilter];
 
-	/* adjusting the scale of the displacement filter. change these values to get a finer or more broad movement */
+	// adjusting the scale of the displacement filter. change these values to get a finer or more broad movement
 	displacementFilter.scale.x = 20;
 	displacementFilter.scale.y = 20;
 	
-	/* adding the image */
-	var texture = PIXI.Texture.fromImage('frontier.png');
+	// adding the image
+
+	console.log($(window).width());
+
+	if ( isMobile() ) {	
+		var texture = PIXI.Texture.fromImage('f.png');
+	} else if ( isTablet() ) {
+		var texture = PIXI.Texture.fromImage('frontier-tablet.png');			
+	} else {
+		var texture = PIXI.Texture.fromImage('frontier.png');	
+	}
+
 	var frontierText = new PIXI.Sprite(texture);
 	container.addChild(frontierText);
 
-	/* applying blur */
+	// applying blur
 	var blurFilter1 = new PIXI.filters.BlurFilter();
-	blurFilter1.blurX = blurringX;
-	blurFilter1.blurY = blurringY;
+	blurFilter1.blurX = 2;
+	blurFilter1.blurY = 3;
 	frontierText.filters = [blurFilter1];
 	
-	/* creating the animation */
+	// creating the animation
 	var count = 0;
 	animate();
 	
 	function animate()
 	{
-	    count += 0.05;
+		count += 0.05;
 
-		displacementSprite.x = Math.cos(count) * displacementvalue
-		displacementSprite.y = count * displacementvalue
-	    renderer.render(stage);
-	    requestAnimationFrame(animate);
-	    
+		displacementSprite.x = Math.cos(count) * 6
+		displacementSprite.y = count * 6
+		renderer.render(stage);
+		requestAnimationFrame(animate);
+
 	}
 
-	/* toggling a class to move the text above and below the image */
-	$(document).ready(function(){
-		$('body').click(function(){
-			$('body').toggleClass('show');
-		});
-	});
+	</script>
+	<a href="files/frontier-call-final.pdf">
+		<div id="callBtn">
+			<a href="files/frontier-call-final.pdf">
+				<h2>Call For <br>Proposals</h2>
+			</a>
+		</div>
+	</a>
+	<div id="content">
+		<!-- about -->
+		<div class="section">
+			<a><h2>About</h2></a>
+			<p>The landscape of design is changing quickly and it’s time to rethink design education, together. As the field embraces an increasingly amorphous definition of practice and an ever-expanding toolset, educators have a unique opportunity to imagine the many possible futures of graphic design, and to speculate, dream, and ideate on the role of future graphic designers.
+			</p>
 
+			<p>
+				Frontier is a conference concerned with alternative models for learning, radical pedagogy, utopianism, emerging technology and tools, global economics and design, virtual classrooms, invisible worlds, the growing relationship between design and tech, homogeneity in design, imagined scenarios, the role of critique in a post-internet culture, and the speculative future of graphic design education.
+			</p>
+		</div>
 
-</script>
-<h1 id="logo">Frontier</h1>
-<div id="content">
-	<!-- about -->
-	<h2>About</h2>
-	<p>Frontier asks the question: What lies beyond the current scope of design education? What methods, media, or matters lie waiting in the wilderness beyond the limit of our current understanding of the field? Design on the Frontier will look beyond the horizon in both content and format, proposing that ‘explorers’ suggest papers, workshops, and activities that speculate on the future of Graphic Design, and the education of future graphic designers.</p>
-	<p>This conference interrogates the speculative future of graphic design and the education of the future graphic designer. The landscape of design is changing quickly. As the field embraces an increasingly amorphous definition of practice and an ever-expanding toolset, educators have a unique opportunity to both navigate and define this frontier space. Beyond market forces and the relative shelter of our institutions, setting aside the present allows for speculation on the collective future we want to build, rather than a static system that feels inevitable.</p>
-	<p>The format of the conference, reader, and website articulates this forward-looking spirit. Instead of calling for papers, we call for ideas, thought experiments, and proposals. Motivated by a desire to provoke and energize, static presentations are instead replaced by highly participatory small events, and submissions are encouraged to reflect a broader range of investigation, from workshops and discussions, to performance, film screening, pop-up exhibition, and design fiction. More akin to a fair than a conference, this network of satellite events encourages physical activity, promotes an optimistic esprit de corps, and asks participants to proactively define the future of design education.</p>
-	
-	<!-- call for papers -->
-	<h2 class="section">Call</h2>
-	<p>Final Call goes here</p>
+		<!-- About the Area -->
+		<div class="section">
+			<a><h2>About The Area</h2></a>
+			<p>Bozeman, Montana is a small town situated in the beautiful and remote Northern Rocky Mountains adjacent to Yellowstone National Park, and October is an ideal time for outdoor recreation and wildlife viewing. Concurrent to the conference, The Museum of the Rockies will be hosting an international exhibit: <em>Leisure and Luxury in the Age of Nero: The Villas of Oplontis near Pompeii.</em> We recommend extending your stay a day or two to enjoy the amenities, outdoor opportunities, and culture of this special place.
+			</p>
+		</div>
 
-	<!-- speakers -->
-	<h2 class="section">Speakers</h2>
-	<p>Coming Soon</p>
-	<canvas id="speaker" width="350" height="350"><canvas>
-	
-	<!-- Key dates -->
-	<h2 class="section">Dates</h2>
-	<ul>
-		<li>Call for proposals (conference): <span class="date">04.10.16</span></li>
-		<li>Application deadline (conference): <span class="date">04.10.16</span></li>
-		<li>Application Deadline(s) (reader): <span class="date">04.10.16</span></li>
-		<li>Registration Opens: <span class="date">04.10.16</span></li>
-		<li>Earlybird Rate ends: <span class="date">04.10.16</span></li>
-		<li>Registration closes: <span class="date">04.10.16</span></li>
-		<li>Conference: <span class="date">04.10.16</span></li>
+		<!-- call for papers -->
+		 <!-- <div class="section">
+			<h2 class="section">Call</h2>
+			<p>Final Call goes here</p>
+		</div> -->
 
-	<!-- Key dates -->
-	<h2 class="section">Submit</h2>
-	<a href="#">Submit a Proposal</a>
+		<!-- speakers -->
+		<div class="section">
+			<a><h2>Speakers</h2></a>
+			<p>Coming Soon...</p>
+			<!-- <canvas id="speaker" width="350" height="350"></canvas> -->
+		</div>
 
-</div>
+		<!-- Key dates -->
+		<div class="section">
+			<a><h2>Key Dates</h2></a>
+			<ul>
+				<li><p><span class="date">March 24, 2016: </span>Call for proposals</p></li>
+				<li><p><span class="date">May 02, 2016: </span>Proposals Due</p></li>
+				<li><p><span class="date">June 30, 2016: </span>Final Submissions Due</p></li>
+				<li><p><span class="date">TBD: </span>Registration Opens</p></li>
+				<li><p><span class="date">TBD: </span>Earlybird Rate Ends</p></li>
+				<li><p><span class="date">TBD: </span>Registration Closes</p></li>
+				<li><p><span class="date">October 7&ndash;9, 2016: </span>Conference</p></li>
+
+			</div>
+
+			<div class="section">
+				<a><h2>For More Information</h2></a>
+				<p><a href="https://twitter.com/AigaFrontier?lang=en">@aigafrontier</a></p>
+				<p><a href="mailto:info@frontier.aiga.org">info@frontier.aiga.org</a></p>
+				<!-- <canvas id="speaker" width="350" height="350"></canvas> -->
+			</div>
+
+			<!-- Key dates -->
+		<!-- <h2 class="section">Submit</h2>
+		<a href="#">Submit a Proposal</a> -->
+
+	</div>
 
 </body>
 </html>
