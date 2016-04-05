@@ -59,14 +59,13 @@ h1#logo {
 #content {
 	width: 60%;
 	height: auto;
-
-	margin: 0px auto;
+    z-index:100;
+    margin: 0px auto;
 	padding-top: 80vh;
 	padding-bottom: 0vh;
 	background: transparent;
 	text-align: center;
 	opacity: 1;
-	z-index: 1;
 }
 
 #content a:hover{
@@ -142,13 +141,15 @@ h1 {
    }
 
    h3 {
-    font-family: 'playground-Bold';
+    font-family: 'playground-Reg';
     color: black;
     display: block;
     margin:0px;
-    font-size:36px ;
-    text-transform: uppercase;
-    letter-spacing: -1px;
+    letter-spacing: 1px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+    font-size: 18px ;
+    line-height: 1.3;
     text-align: left;
    }
 
@@ -203,6 +204,7 @@ h1 {
 
 	#content {
 		width: 80%;
+        z-index:100;
 	}
 
      p {
@@ -213,8 +215,11 @@ h1 {
     margin:0px;
     font-size: 18px ;
     line-height: 1.3;
-    text-indent: 50px;
     text-align: left;
+   }
+
+    h3 {
+    font-size: 14px ;
    }
 
 }
