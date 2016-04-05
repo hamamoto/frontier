@@ -1,27 +1,27 @@
 
 @font-face {
-    font-family: 'playground-Bold';
-    src: url('fonts/plaground_bold-webfont.eot');
-    src: url('fonts/plaground_bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/plaground_bold-webfont.woff2') format('woff2'),
-         url('fonts/plaground_bold-webfont.woff') format('woff'),
-         url('fonts/plaground_bold-webfont.ttf') format('truetype'),
-         url('fonts/plaground_bold-webfont.svg#playground_boldbold') format('svg');
-    font-weight: bold;
-    font-style: bold;
+  font-family: 'playground-Bold';
+  src: url('fonts/plaground_bold-webfont.eot');
+  src: url('fonts/plaground_bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/plaground_bold-webfont.woff2') format('woff2'),
+  url('fonts/plaground_bold-webfont.woff') format('woff'),
+  url('fonts/plaground_bold-webfont.ttf') format('truetype'),
+  url('fonts/plaground_bold-webfont.svg#playground_boldbold') format('svg');
+  font-weight: bold;
+  font-style: bold;
 
 }
 
 @font-face {
-    font-family: 'playground-Reg';
-    src: url('fonts/plaground_reg_1.1c-webfont.eot');
-    src: url('fonts/plaground_reg_1.1c-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/plaground_reg_1.1c-webfont.woff2') format('woff2'),
-         url('fonts/plaground_reg_1.1c-webfont.woff') format('woff'),
-         url('fonts/plaground_reg_1.1c-webfont.ttf') format('truetype'),
-         url('fonts/plaground_reg_1.1c-webfont.svg#playground_regularregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'playground-Reg';
+  src: url('fonts/plaground_reg_1.1c-webfont.eot');
+  src: url('fonts/plaground_reg_1.1c-webfont.eot?#iefix') format('embedded-opentype'),
+  url('fonts/plaground_reg_1.1c-webfont.woff2') format('woff2'),
+  url('fonts/plaground_reg_1.1c-webfont.woff') format('woff'),
+  url('fonts/plaground_reg_1.1c-webfont.ttf') format('truetype'),
+  url('fonts/plaground_reg_1.1c-webfont.svg#playground_regularregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 
 }
 
@@ -41,7 +41,7 @@ a {
 canvas {
 	z-index: 0;
 	opacity: .9;
-    transition: all 300ms;	
+  transition: all 300ms;	
 }
 
 h1#logo {
@@ -52,143 +52,143 @@ h1#logo {
 }
 
 .section{
-    padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 
 #content {
 	width: 60%;
 	height: auto;
-    z-index:100;
-    margin: 0px auto;
-	padding-top: 80vh;
-	padding-bottom: 0vh;
-	background: transparent;
-	text-align: center;
-	opacity: 1;
+  z-index:100;
+  margin: 0px auto;
+  padding-top: 80vh;
+  padding-bottom: 0vh;
+  background: transparent;
+  text-align: center;
+  opacity: 1;
 }
 
 #content a:hover{
-    -webkit-filter: blur(5px);
-    -webkit-transition: -webkit-filter .5s;
+  -webkit-filter: blur(5px);
+  -webkit-transition: -webkit-filter .5s;
 }
 
 #content a h2:hover{
-    -webkit-filter: blur(5px);
-    -webkit-transition: -webkit-filter .5s;
+  -webkit-filter: blur(5px);
+  -webkit-transition: -webkit-filter .5s;
 }
 
 
 #callBtn{
-   
-    border: 5px solid cyan;
-    color: cyan;
-    z-index: 100;
-    position: fixed;
-    left: 25%;
-    top: 280px;
-    width: 200px;
-    height: 120px;
-    transform: rotate(-22deg);
-    -ms-transform: rotate(-22deg);
-    -webkit-transform: rotate(-22deg);
+
+  border: 5px solid cyan;
+  color: cyan;
+  z-index: 100;
+  position: fixed;
+  left: 25%;
+  top: 280px;
+  width: 200px;
+  height: 120px;
+  transform: rotate(-22deg);
+  -ms-transform: rotate(-22deg);
+  -webkit-transform: rotate(-22deg);
 
 }
 
 #callBtn h2{
-    padding-top: 36px;
-    color: cyan;
-    text-decoration: none;
-    text-align: center;
-    text-decoration: none;
-    text-indent: 0px;
-    letter-spacing: .05em;
-    font-size: 20px;
-    font-weight: normal;
-    line-height: 26px;
+  padding-top: 36px;
+  color: cyan;
+  text-decoration: none;
+  text-align: center;
+  text-decoration: none;
+  text-indent: 0px;
+  letter-spacing: .05em;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 26px;
 }
 
 #callBtn:hover{
   -webkit-filter: blur(5px);
-    -webkit-transition: -webkit-filter .5s;
+  -webkit-transition: -webkit-filter .5s;
 }
 
 
 h1 {
-    font-family: 'playground-Bold';
-    color: black;
-    display: block;
-    margin:0px;
-    font-size: 70px ;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    text-align: left;
-   }
+  font-family: 'playground-Bold';
+  color: black;
+  display: block;
+  margin:0px;
+  font-size: 70px ;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-align: left;
+}
 
-   h2 {
-    font-family: 'playground-Bold';
-    color: black;
-    display: block;
-    margin:0px;
-    padding-bottom: 25px;
-    font-size: 22px ;
-    text-indent: 50px;
-    line-height: 1.1;
-    text-decoration: underline;
-    /*text-transform: uppercase;*/
-    letter-spacing: -1px;
-    text-align: left;
-   }
+h2 {
+  font-family: 'playground-Bold';
+  color: black;
+  display: block;
+  margin:0px;
+  padding-bottom: 25px;
+  font-size: 22px ;
+  text-indent: 50px;
+  line-height: 1.1;
+  text-decoration: underline;
+  /*text-transform: uppercase;*/
+  letter-spacing: -1px;
+  text-align: left;
+}
 
-   h3 {
-    font-family: 'playground-Reg';
-    color: black;
-    display: block;
-    margin:0px;
-    letter-spacing: 1px;
-    padding-bottom: 10px;
-    text-decoration: underline;
-    font-size: 18px ;
-    line-height: 1.3;
-    text-align: left;
-   }
+h3 {
+  font-family: 'playground-Reg';
+  color: black;
+  display: block;
+  margin:0px;
+  letter-spacing: .5px;
+  padding-bottom: 10px;
+  text-decoration: underline;
+  font-size: 16px ;
+  line-height: 1.3;
+  text-align: left;
+}
 
-   p {
-    font-family: 'playground-Reg';
-    color: black;
-    display: block;
-    margin:0px;
-    font-size: 22px ;
-    line-height: 1.3;
-    text-align: left;
-   }
+p {
+  font-family: 'playground-Reg';
+  color: black;
+  display: block;
+  margin:0px;
+  font-size: 22px ;
+  line-height: 1.3;
+  text-align: left;
+}
 
-   #indent  p {
-    font-family: 'playground-Reg';
-    color: black;
-    display: block;
-    margin:0px;
-    font-size: 22px ;
-     text-indent: 50px;
-    line-height: 1.3;
-    text-align: left;
-   }
+#indent  p {
+  font-family: 'playground-Reg';
+  color: black;
+  display: block;
+  margin:0px;
+  font-size: 22px ;
+  text-indent: 50px;
+  line-height: 1.3;
+  text-align: left;
+}
 
-   ul{
-    list-style: none;
-    margin: 0;
-    padding:0;
-   }
+ul{
+  list-style: none;
+  margin: 0;
+  padding:0;
+}
 
-   li{
-    text-align: left;
-    padding-bottom: 5px;
-   }
+li{
+  text-align: left;
+  padding-bottom: 5px;
+}
 .date{
-    font-family: 'playground-Bold';
+  font-family: 'playground-Bold';
 
 }
-   
+
 
 .show canvas {
 	z-index: 0;
@@ -204,10 +204,10 @@ h1 {
 
 	#content {
 		width: 80%;
-        z-index:100;
-	}
+    z-index:100;
+  }
 
-     p {
+  p {
     font-family: 'playground-Reg';
     
     color: black;
@@ -216,11 +216,30 @@ h1 {
     font-size: 18px ;
     line-height: 1.3;
     text-align: left;
-   }
+  }
 
-    h3 {
+  h3 {
     font-size: 14px ;
-   }
+  }
+
+
+#callBtn{
+
+  border: 5px solid cyan;
+  width: 100px;
+  height: 120px;
+  transform: rotate(-22deg);
+  -ms-transform: rotate(-22deg);
+  -webkit-transform: rotate(-22deg);
+
+}
+
+#callBtn h2{
+  padding-top: 36px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 26px;
+}
 
 }
 
