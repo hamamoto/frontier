@@ -222,24 +222,20 @@ li{
     font-size: 14px ;
   }
 
+  #callBtn{
 
-#callBtn{
-
-  border: 5px solid cyan;
-  width: 100px;
-  height: 120px;
-  transform: rotate(-22deg);
-  -ms-transform: rotate(-22deg);
-  -webkit-transform: rotate(-22deg);
+  border: 4px solid cyan;
+  width: 140px;
+  height: 83px;
 
 }
 
 #callBtn h2{
-  padding-top: 36px;
-  font-size: 14px;
-  font-weight: normal;
-  line-height: 26px;
+  padding-top: 22px;
+    font-size: 16px;
+    line-height: 22px;
 }
+
 
 }
 
