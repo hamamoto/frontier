@@ -59,31 +59,37 @@ h1#logo {
 #content {
 	width: 60%;
 	height: auto;
-  z-index:100;
+  z-index: 100;
   margin: 0px auto;
   padding-top: 80vh;
   padding-bottom: 0vh;
   background: transparent;
   text-align: center;
   opacity: 1;
+  position: relative;
 }
+
+#content a, #content a h2, #callBtn{
+  transition: -webkit-filter .35s ease-in-out;
+  -webkit-transition: -webkit-filter .35s ease-in-out;
+}
+
 
 #content a:hover{
   -webkit-filter: blur(5px);
-  -webkit-transition: -webkit-filter .5s;
+  -webkit-transition: -webkit-filter .35s;
 }
 
 #content a h2:hover{
   -webkit-filter: blur(5px);
-  -webkit-transition: -webkit-filter .5s;
+  -webkit-transition: -webkit-filter .35s;
 }
 
 
 #callBtn{
-
   border: 5px solid cyan;
   color: cyan;
-  z-index: 100;
+  z-index: 1000;
   position: fixed;
   left: 25%;
   top: 280px;
@@ -92,7 +98,6 @@ h1#logo {
   transform: rotate(-22deg);
   -ms-transform: rotate(-22deg);
   -webkit-transform: rotate(-22deg);
-
 }
 
 #callBtn h2{
@@ -110,7 +115,6 @@ h1#logo {
 
 #callBtn:hover{
   -webkit-filter: blur(5px);
-  -webkit-transition: -webkit-filter .5s;
 }
 
 
@@ -189,15 +193,47 @@ li{
 
 }
 
+@media only screen and (max-width : 1024px) { 
 
-.show canvas {
-	z-index: 0;
-	opacity: .25;
+  h3 {
+    letter-spacing: .5px;
+    padding-bottom: 10px;
+    text-decoration: underline;
+    font-size: 14px;
+    line-height: 1.3;
+  }
 
-}
+  p {
+    font-size: 18px;
+    line-height: 1.3;
+  }
 
-.show #content {
-	z-index: 1000;
+  #indent  p {
+    font-size: 16px ;
+    text-indent: 50px;
+    line-height: 1.3;
+  }
+
+
+  #callBtn{
+    border: 4px solid cyan;
+    top: 280px;
+    width: 170px;
+    height: 100px;
+  }
+
+  #callBtn h2{
+    padding-top: 30px;
+    color: cyan;
+    text-decoration: none;
+    text-align: center;
+    text-decoration: none;
+    text-indent: 0px;
+    letter-spacing: .05em;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 22px;
+  }
 }
 
 @media only screen and (max-width : 667px) { 
@@ -208,33 +244,29 @@ li{
   }
 
   p {
-    font-family: 'playground-Reg';
-    
-    color: black;
-    display: block;
     margin:0px;
-    font-size: 18px ;
+    font-size: 15px;
     line-height: 1.3;
     text-align: left;
   }
 
   h3 {
-    font-size: 14px ;
+    font-size: 12px ;
   }
 
   #callBtn{
+    border: 3px solid cyan;
+    width: 140px;
+    height: 83px;
+    left: 45%;
+    top: 80px;    
+  }
 
-  border: 4px solid cyan;
-  width: 140px;
-  height: 83px;
-
-}
-
-#callBtn h2{
-  padding-top: 22px;
-    font-size: 16px;
-    line-height: 22px;
-}
+  #callBtn h2{
+    padding-top: 22px;
+    font-size: 15px;
+    line-height: 20px;
+  }
 
 
 }
