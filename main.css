@@ -245,13 +245,13 @@ li{
 
   p {
     margin:0px;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.3;
     text-align: left;
   }
 
   h3 {
-    font-size: 12px ;
+    font-size: 13px ;
   }
 
   #callBtn{
@@ -264,7 +264,7 @@ li{
 
   #callBtn h2{
     padding-top: 22px;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 20px;
   }
 
