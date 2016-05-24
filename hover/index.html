@@ -1,0 +1,72 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Frontier</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/pixi-current.js"></script> 
+	<script src="js/jquery.min.js"></script>	
+</head>
+<body>
+	<script>
+
+	$( document ).ready(function() {
+	
+	var interactive = true;
+
+
+		for (var id = 0; id < 3; id++) {
+
+		    (function (id) {
+		        // Renderer
+		        var renderer = PIXI.autoDetectRenderer(1132, 754);
+		        document.body.appendChild(renderer.view);
+
+		        // Stage
+		        var stage = new PIXI.Stage(0xd92256);
+		        stage.interactive = true;
+
+		        // Container
+		        var container = new PIXI.DisplayObjectContainer();
+		        stage.addChild(container);
+
+		        // Background
+		        var bg = PIXI.Sprite.fromImage("img/test"+id+".jpg");
+		        container.addChild(bg);
+
+		        // Filter
+		        var displacementSprite = PIXI.Sprite.fromImage("img/displace-texture.png");
+		        var displacementFilter = new PIXI.filters.DisplacementFilter(displacementSprite);
+				
+				stage.addChild(displacementSprite);
+
+		        // Apply it
+		        container.filters = [displacementFilter];
+
+		        // Animate
+		        animate();
+
+		        function animate() {
+		            var offset = 0.1+id;
+
+					if (!stage._over) {
+						
+						displacementSprite.x += offset;
+			            displacementSprite.y += offset;
+					}
+
+		            renderer.render(stage);
+					requestAnimationFrame(animate);
+		        }
+		    })(id);
+
+		}
+	});
+	</script>
+		
+	<div id="content">	
+	</div>
+
+</body>
+</html>
