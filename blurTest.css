@@ -28,7 +28,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #fff;
+	background-color: #696969;
 
 	font: 18px/24px 'playground-Reg';
 }
@@ -120,7 +120,7 @@ h1#logo {
 
 h1 {
   font-family: 'playground-Bold';
-  color: black;
+  color: #ff00cc;
   display: block;
   margin:0px;
   font-size: 70px ;
@@ -131,7 +131,7 @@ h1 {
 
 h2 {
   font-family: 'playground-Bold';
-  color: black;
+  color: #ff00cc;
   display: block;
   margin:0px;
   padding-bottom: 25px;
@@ -146,7 +146,7 @@ h2 {
 
 h3 {
   font-family: 'playground-Reg';
-  color: black;
+  color: #ff00cc;
   display: block;
   margin:0px;
   letter-spacing: .5px;
@@ -169,7 +169,7 @@ p {
 
 #indent  p {
   font-family: 'playground-Reg';
-  color: black;
+  color: #ff00cc;
   display: block;
   margin:0px;
   font-size: 22px ;
@@ -225,6 +225,8 @@ img.blur{
 #img2{
   left:100px;
   top:100px;
+  width:500px;
+  height:500px;
   opacity:.2;
   filter: blur(10px);
   -webkit-filter: blur(10px);
@@ -232,9 +234,15 @@ img.blur{
   -o-filter: blur(10px);
   -ms-filter: blur(10px);
 }
+
+#img2 img{
+  width:500px;
+}
 #img3{
   left:300px;
   top:300px;
+  width:500px;
+  height:auto;
   opacity:.2;
   filter: blur(10px);
   -webkit-filter: blur(10px);
@@ -246,6 +254,8 @@ img.blur{
 
   left:500px;
   top:50px;
+  width:500px;
+  height:auto;
   opacity:.2;
   filter: blur(10px);
   -webkit-filter: blur(10px);

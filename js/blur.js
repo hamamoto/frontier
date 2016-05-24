@@ -38,7 +38,7 @@ $(document).ready(function(){
                          	});
                          }
                      });
-		$('#img1').animate({opacity: '0.2'}, 1000);
+		$('#img1').animate({opacity: '0.1'}, 1000);
 	});
 
 	$('#btn2').mouseover('click touchstart', function() { 
@@ -75,7 +75,7 @@ $(document).ready(function(){
                          	});
                          }
                      });
-		$('#img2').animate({opacity: '0.2'}, 1000);
+		$('#img2').animate({opacity: '0.1'}, 1000);
 	});
 
 	$('#btn3').mouseover('click touchstart', function() { 
@@ -112,7 +112,7 @@ $(document).ready(function(){
                          	});
                          }
                      });
-		$('#img3').animate({opacity: '0.2'}, 1000);
+		$('#img3').animate({opacity: '0.1'}, 1000);
 	});
 
 	$('#btn4').mouseover('click touchstart', function() { 
@@ -149,7 +149,7 @@ $(document).ready(function(){
                          	});
                          }
                      });
-		$('#img4').animate({opacity: '0.2'}, 1000);
+		$('#img4').animate({opacity: '0.1'}, 1000);
 	});
 
 
