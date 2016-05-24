@@ -120,7 +120,7 @@ h1#logo {
 
 h1 {
   font-family: 'playground-Bold';
-  color: #ff00cc;
+  color: white;
   display: block;
   margin:0px;
   font-size: 70px ;
@@ -131,7 +131,7 @@ h1 {
 
 h2 {
   font-family: 'playground-Bold';
-  color: #ff00cc;
+  color: white;
   display: block;
   margin:0px;
   padding-bottom: 25px;
@@ -146,7 +146,7 @@ h2 {
 
 h3 {
   font-family: 'playground-Reg';
-  color: #ff00cc;
+  color: white;
   display: block;
   margin:0px;
   letter-spacing: .5px;
@@ -159,7 +159,7 @@ h3 {
 
 p {
   font-family: 'playground-Reg';
-  color: black;
+  color: #ff00cc;
   display: block;
   margin:0px;
   font-size: 22px ;
