@@ -7,12 +7,121 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="js/pixi-current.js"></script> 
 	<script src="js/jquery.min.js"></script>	
+	<style>
+
+		@font-face {
+		  font-family: 'playground-Bold';
+		  src: url('../fonts/plaground_bold-webfont.eot');
+		  src: url('../fonts/plaground_bold-webfont.eot?#iefix') format('embedded-opentype'),
+		  url('../fonts/plaground_bold-webfont.woff2') format('woff2'),
+		  url('../fonts/plaground_bold-webfont.woff') format('woff'),
+		  url('../fonts/plaground_bold-webfont.ttf') format('truetype'),
+		  url('../fonts/plaground_bold-webfont.svg#playground_boldbold') format('svg');
+		  font-weight: bold;
+		  font-style: bold;
+
+		}
+
+		@font-face {
+		  font-family: 'playground-Reg';
+		  src: url('../fonts/plaground_reg_1.1c-webfont.eot');
+		  src: url('../fonts/plaground_reg_1.1c-webfont.eot?#iefix') format('embedded-opentype'),
+		  url('../fonts/plaground_reg_1.1c-webfont.woff2') format('woff2'),
+		  url('../fonts/plaground_reg_1.1c-webfont.woff') format('woff'),
+		  url('../fonts/plaground_reg_1.1c-webfont.ttf') format('truetype'),
+		  url('../fonts/plaground_reg_1.1c-webfont.svg#playground_regularregular') format('svg');
+		  font-weight: normal;
+		  font-style: normal;
+
+		}	
+
+		body {
+			font-family: playground-Reg;
+			background: #4a4a4a;
+			color: #bd10e0;
+		}
+
+		canvas {
+			width: 362px;
+			height: 543px;
+			position: absolute;
+
+			-webkit-filter: blur(15px);
+			filter: blur(15px);
+
+			-webkit-transition: all 1000ms;
+			transition: all 1000ms;			
+
+		}
+
+		canvas.hovering {
+			-webkit-filter: blur(0px);
+			filter: blur(0px);
+		}	
+
+		.name-link {
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 11px;
+			position: absolute;
+			display: block;
+
+			z-index: 1000;
+
+			margin-top: 100px;
+			margin-left: 300px;
+
+		}	
+
+		.image-text-pos-0 {
+			top: 100px;
+			left: 100px;
+		}
+
+		.image-text-pos-1 {
+			top: 600px;
+			left: 400px;
+		}
+
+		.image-text-pos-2 {
+			top: 300px;
+			left: 800px;
+		}
+
+
+	</style>
 </head>
 <body>
-	<script>
+	
+		
+	<div id="content">	
+
+		<canvas class="image-text-pos-0" id="my-canvas-0"></canvas>
+		<span class="name-link image-text-pos-0" id="name-link-0" data-image="my-canvas-0">Jonathan Hanahan</span>
+
+		<canvas class="image-text-pos-1" id="my-canvas-1"></canvas>
+		<span class="name-link image-text-pos-1" id="name-link-1" data-image="my-canvas-1">Colin Frazer</span>
+
+		<canvas class="image-text-pos-2" id="my-canvas-2"></canvas>
+		<span class="name-link image-text-pos-2" id="name-link-2" data-image="my-canvas-2">Juliette Cezzar</span>
+
+	</div>
+
+
+<script>
 
 	$( document ).ready(function() {
 	
+	$('.name-link').hover(
+		function() {
+			var image = $(this).attr("data-image");
+    		$('#'+image).addClass('hovering');
+  		}, function() {
+			var image = $(this).attr("data-image");
+    		$('#'+image).removeClass('hovering');
+  		}
+  	);
+
 	var interactive = true;
 
 
@@ -20,11 +129,13 @@
 
 		    (function (id) {
 		        // Renderer
-		        var renderer = PIXI.autoDetectRenderer(1132, 754);
+		        //var renderer = PIXI.autoDetectRenderer(1132, 754);
+		        var canvas = document.getElementById('my-canvas-'+id);
+				var renderer = new PIXI.autoDetectRenderer(724, 1086, {transparent: true, view: canvas});
 		        document.body.appendChild(renderer.view);
 
 		        // Stage
-		        var stage = new PIXI.Stage(0xd92256);
+		        var stage = new PIXI.Stage(0xFFFFFF);
 		        stage.interactive = true;
 
 		        // Container
@@ -32,7 +143,7 @@
 		        stage.addChild(container);
 
 		        // Background
-		        var bg = PIXI.Sprite.fromImage("img/test"+id+".jpg");
+		        var bg = PIXI.Sprite.fromImage("img/test"+id+".png");
 		        container.addChild(bg);
 
 		        // Filter
@@ -44,14 +155,22 @@
 		        // Apply it
 		        container.filters = [displacementFilter];
 
+				renderer.click = function(mouseData){console.log("MOUSE CLICK " + mouseData.target.hexId);}
+
+
+					if (!stage._over) {
+						console.log(this);
+					}
+
+
 		        // Animate
 		        animate();
 
 		        function animate() {
-		            var offset = 0.1+id;
+		            //var offset = 0.5;
+		            var offset = 2;
 
 					if (!stage._over) {
-						
 						displacementSprite.x += offset;
 			            displacementSprite.y += offset;
 					}
@@ -64,9 +183,6 @@
 		}
 	});
 	</script>
-		
-	<div id="content">	
-	</div>
 
 </body>
 </html>
