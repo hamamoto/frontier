@@ -55,6 +55,13 @@ h1#logo {
   padding-bottom: 100px;
 }
 
+#speakers  p{
+  display:inline-block;
+}
+
+#subject {
+  padding-left: 20px;
+}
 
 #content {
 	width: 60%;
@@ -64,7 +71,6 @@ h1#logo {
   padding-top: 80vh;
   padding-bottom: 0vh;
   background: transparent;
-  text-align: center;
   opacity: 1;
   position: relative;
 }
@@ -101,7 +107,7 @@ h1#logo {
 }
 
 #callBtn h2{
-  padding-top: 36px;
+  padding-top: 50px;
   color: cyan;
   text-decoration: none;
   text-align: center;
