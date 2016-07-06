@@ -1,0 +1,136 @@
+body {
+	font-family: playground-Reg;
+	background: #4a4a4a;
+	color: #bd10e0;
+}
+
+@font-face {
+	font-family: 'playground-Bold';
+	src: url('../fonts/plaground_bold-webfont.eot');
+	src: url('../fonts/plaground_bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/plaground_bold-webfont.woff2') format('woff2'),
+	url('../fonts/plaground_bold-webfont.woff') format('woff'),
+	url('../fonts/plaground_bold-webfont.ttf') format('truetype'),
+	url('../fonts/plaground_bold-webfont.svg#playground_boldbold') format('svg');
+	font-weight: bold;
+	font-style: bold;
+
+}
+
+@font-face {
+	font-family: 'playground-Reg';
+	src: url('../fonts/plaground_reg_1.1c-webfont.eot');
+	src: url('../fonts/plaground_reg_1.1c-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/plaground_reg_1.1c-webfont.woff2') format('woff2'),
+	url('../fonts/plaground_reg_1.1c-webfont.woff') format('woff'),
+	url('../fonts/plaground_reg_1.1c-webfont.ttf') format('truetype'),
+	url('../fonts/plaground_reg_1.1c-webfont.svg#playground_regularregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}	
+
+
+
+canvas {
+	width: 362px;
+	height: 543px;
+	position: absolute;
+
+	-webkit-filter: blur(15px);
+	filter: blur(15px);
+
+	-webkit-transition: all 1000ms;
+	transition: all 1000ms;			
+
+}
+
+canvas.hovering {
+	-webkit-filter: blur(0px);
+	filter: blur(0px);
+}	
+
+.name-link {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 11px;
+	position: absolute;
+	display: block;
+
+	z-index: 1000;
+
+	margin-top: 100px;
+	margin-left: 300px;
+
+}	
+
+.image-text-pos-0 {
+	top: 100px;
+	left: 100px;
+}
+
+.image-text-pos-1 {
+	top: 600px;
+	left: 400px;
+}
+
+.image-text-pos-2 {
+	top: 300px;
+	left: 800px;
+}
+
+#bio{
+	opacity:0;
+	width:300px;
+	color: #00ccff;
+}
+.container{
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+#content1{
+	border-color: red;
+	border-width: 5px;
+}
+
+#content2{
+	border-color: orange;
+	border-width: 5px;
+}
+
+#content3{
+	border-color: yellow;
+	border-width: 5px;
+}
+
+#content4{
+	border-color: green;
+	border-width: 5px;
+}
+
+#content5{
+	border-color: blue;
+	border-width: 5px;
+}
+
+#content6{
+	border-color: indigo;
+	border-width: 5px;
+}
+
+#content7{
+	border-color: violet;
+	border-width: 5px;
+}
+
+#content8{
+	border-color: cyan;
+	border-width: 5px;
+}
+
+
+
+
+

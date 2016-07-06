@@ -129,6 +129,16 @@
   		}
   	);
 
+  	$('.name-link').hover(
+		function() {
+			var image = $(this).attr("data-image");
+    		$('#'+image).addClass('hovering');
+  		}, function() {
+			var image = $(this).attr("data-image");
+    		$('#'+image).removeClass('hovering');
+  		}
+  	);
+
 	var interactive = true;
 
 
