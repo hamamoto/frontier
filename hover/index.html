@@ -103,14 +103,14 @@
 	<div id="content">	
 
 		<canvas class="image-text-pos-0" id="my-canvas-0"></canvas>
-		<span class="name-link image-text-pos-0" id="name-link-0" data-image="my-canvas-0">Jonathan Hanahan</span>
-		<span class="name-link image-text-pos-0" id = "bio"> Jonathan Hanahan is an American artist and designer whose work navigates complex narratives in contemporary realities through multiple scales, mediums, and dimensions, often in tandem. He is interested in new ways to experience and understand the digital/physical divide and building new sensory and interactive relationships between users and invisible systems. His work has been profiled in numerous exhibitions and publications including Adobe TV, PRINT, Clog, and Volume magazines. He received an MFA in Graphic Design at the Rhode Island School of Design and a Bachelors of Architecture degree from Virginia Tech. Jonathan is currently an Assistant Professor of Communication Design in the Sam Fox School of Design & Visual Arts at Washington University in St. Louis and maintains Milieu, an anti-disciplinary design practice with his wife Dani LaFountaine. Milieu focuses on developing tangible experiences with the internet.</span>
+		<span class="name-link image-text-pos-0" id="name-link-0" data-image="my-canvas-0">Grace Howard</span>
+
 
 		<canvas class="image-text-pos-1" id="my-canvas-1"></canvas>
-		<span class="name-link image-text-pos-1" id="name-link-1" data-image="my-canvas-1">Colin Frazer</span>
+		<span class="name-link image-text-pos-1" id="name-link-1" data-image="my-canvas-1">Jonathan Grant</span>
 
 		<canvas class="image-text-pos-2" id="my-canvas-2"></canvas>
-		<span class="name-link image-text-pos-2" id="name-link-2" data-image="my-canvas-2">Juliette Cezzar</span>
+		<span class="name-link image-text-pos-2" id="name-link-2" data-image="my-canvas-2">Willie Clark</span>
 
 	</div>
 
@@ -118,15 +118,18 @@
 <script>
 
 	$( document ).ready(function() {
-	
-	$('.name-link').hover(
-		function() {
-			var image = $(this).attr("data-image");
-    		$('#'+image).addClass('hovering');
-  		}, function() {
-			var image = $(this).attr("data-image");
-    		$('#'+image).removeClass('hovering');
-  		}
+
+		window.nameHovered	= false
+		$('.name-link').hover(
+			function() {
+				var image = $(this).attr("data-image");
+	    		$('#'+image).addClass('hovering');
+	    		window.nameHovered = true
+	  		}, function() {
+				var image = $(this).attr("data-image");
+	    		$('#'+image).removeClass('hovering');
+	    		window.nameHovered = false
+	  		}
   	);
 
 	var interactive = true;
@@ -150,7 +153,7 @@
 		        stage.addChild(container);
 
 		        // Background
-		        var bg = PIXI.Sprite.fromImage("img/test"+id+".png");
+		        var bg = PIXI.Sprite.fromImage("img/test"+id+".jpg");
 		        container.addChild(bg);
 
 		        // Filter
@@ -170,14 +173,23 @@
 					}
 
 
-		        // Animate
+		        
+
+		         function isOverName(){
+		        	var x = event.clientX, y = event.clientY,
+    				elementMouseIsOver = document.elementFromPoint(x, y);	
+    				return $(elementMouseIsOver).hasClass('name-link')
+		        }
+		        
+
+				// Animate
 		        animate();
 
 		        function animate() {
 		            //var offset = 0.5;
 		            var offset = 2;
 
-					if (!stage._over) {
+					if (!stage._over && !window.nameHovered ) {
 						displacementSprite.x += offset;
 			            displacementSprite.y += offset;
 					}
