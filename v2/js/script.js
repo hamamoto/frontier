@@ -20,6 +20,6 @@ $( window ).load(function() {
  	var div = $('#frontier'); // take your div id
     $(window).scrollTop(div.offset().top);
 	$('#allcontainer').removeClass('transparent');
-	$("#menu").addClass("transparent");
+	$("#menu").removeClass("transparent");
 
 });	
