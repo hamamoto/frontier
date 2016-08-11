@@ -80,6 +80,10 @@ a:hover{
 
 }
 
+.active {
+   text-decoration:underline;
+}
+
 /* content */
 
 #allcontainer{
