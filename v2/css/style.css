@@ -74,12 +74,6 @@ a:hover{
 	text-decoration:underline;
 }
 
-.menu li{
-	font-family: 'Playground';
-	font-size: 14px;
-
-}
-
 .active {
    text-decoration:underline;
 }
@@ -103,6 +97,7 @@ a:hover{
 	min-height: 100vh;
 	display: flex;
   	align-items: flex-start;	
+  	flex-flow: row wrap;
   	justify-content: center;	
 	box-sizing: border-box;
     padding: 10% 15%;
@@ -130,33 +125,35 @@ a:hover{
 #instigators {
 }
 
-#instigators img{
-
-	-webkit-filter: blur(15px);
-	filter: blur(15px);
-
-	-webkit-transition: all 1000ms;
-	transition: all 1000ms;			
-
-
-	
-	/*mix-blend-mode: multiply;*/
-	
-	opacity: .35;	
+#instigators ul {
+	flex-basis: 30%;
+	margin: 0 1.5% 100px;
 }
 
-.name-link {
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 11px;
-	z-index: 1000;
-}	
+#instigators ul li{
+	margin-bottom: 15px;
+}
+
+#instigators ul li a{
+	display: block;
+}
+
+#instigators ul li a::after{
+	content: " →";
+}
+
+.title {
+	font-weight: bold;
+}
+
+.presenter {
+	padding-left: 20px;
+}
+
 
 /* Frontier */
 
 #frontier{
-   flex-direction: column;
-   align-items: center;
 }
 
 #frontier h1 {
@@ -164,12 +161,13 @@ a:hover{
 }
 
 #frontier h2 {
+	font-size: 36px;
 	text-align: center;
 }
 
 /* Schedule */
 
-#schedule{
+#schedule{   	
 }
 
 .day {
@@ -195,9 +193,7 @@ a:hover{
 
 /* People */
 
-#people{
-  	flex-flow: row wrap;
-  	justify-content: center;	    
+#people{    
 }
 
 #people ul {
@@ -227,7 +223,7 @@ a:hover{
 
 /* registration */
 
-#registration{
+#registration{	
 }
 
 #registration div{
@@ -271,6 +267,8 @@ p.note {
 /* location */
 
 #location{
+  	flex-flow: row wrap;
+  	justify-content: center;	    
 }
 
 #location a{
@@ -315,6 +313,30 @@ p.note {
 
 /*	-webkit-filter: grayscale(80%);
 	filter: grayscale(80%);*/
+}
+
+
+#images-holder {
+	position: fixed;
+	width:100%;
+	height: 100vh;
+}
+
+#images-holder img{
+	-webkit-filter: blur(15px);
+	filter: blur(15px);
+	-webkit-transition: all 1000ms;
+	transition: all 1000ms;			
+
+	/*mix-blend-mode: multiply;*/
+	
+	opacity: 0;	
+}
+
+/* show images once they have been arranged */
+
+#images-holder img.show{
+	opacity: .35;	
 }
 
 
@@ -385,13 +407,29 @@ p.note {
 }
 
 .image-pos-8 {
-	top: 150px;
+	top: 100px;
 	right: 150px;
+}
+
+.image-pos-9 {
+	top: 50px;
+	right: 300px;
+}
+
+.image-pos-10 {
+	bottom: 400px;
+	left: 700px;
+}
+
+.image-pos-11 {
+	top: 150px;
+	left: 150px;
 }
 
 
 
-/* image text positions */
+
+/* image text positions 
 
 .image-text-pos-1, .image-text-pos-2, .image-text-pos-3, .image-text-pos-4, .image-text-pos-5, .image-text-pos-6 {
 	position: absolute;	
@@ -425,6 +463,123 @@ p.note {
 .image-text-pos-6 {
 	bottom: 50px;
 	right: -50px;
+}
+
+*/
+
+/* smaller desktops / laptops */
+
+@media only screen and (max-width : 1024px) { 
+
+}
+
+
+/* phone */
+
+
+@media only screen and (max-width : 667px) { 
+
+body {
+	font-size: 18px;
+}
+
+
+#menu{
+	position:fixed;
+	top:0%;
+	left:0%;
+	z-index: 10;
+
+	height: 100vh;
+	width: 100vw;
+
+	-webkit-transition: opacity 1200ms;
+	transition: opacity 1200ms;		
+
+	background: #1d1d1d;
+
+	display: none;
+}
+
+#menu ul {
+	box-sizing: border-box;
+	padding: 15% 10% 10%;
+}
+
+#menu li{
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+/* sections */
+
+.container{
+    padding: 20px;
+}
+
+
+/* about */
+
+#about p {
+	width: 100%;
+	font-size: 24px;
+	margin: 0px;
+	margin-bottom: 30px;
+}
+
+/* */
+
+#frontier h1 {
+	font-size: 80px;
+}
+
+#frontier h2 {
+	font-size: 18px;
+	text-align: center;
+}
+
+
+/* make multi column layouts 1 column*/
+
+#instigators ul, #people ul, .day, .location-item {
+	flex-basis: 100%;
+	margin: 0 0% 100px;
+}
+
+/* Special CSS for Registration */
+
+#registration div{
+	height: auto;
+	margin: 0px;
+}
+
+#registration-info, #registration-prices {
+	flex-basis: 100%;
+}
+
+#registration-info p{
+	font-size: 20px;
+	margin-bottom: 40px;
+	margin-right: 40px;
+}
+
+.price {
+	font-size: 20px;
+}
+
+.purchase {
+	margin-bottom: 40px;
+}
+
+/* images */
+
+#images-holder img.show{
+	opacity: .15;	
+}
+
+
+
+
 }
 
 
