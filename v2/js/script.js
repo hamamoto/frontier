@@ -27,6 +27,8 @@ $(document).ready(function() {
 		$('#bio0').animate({opacity: '1'}, 120); 
 	});
 
+	// active scroll
+
 	$(window).scroll(function() {
 
 		var position = $(this).scrollTop();
@@ -34,13 +36,14 @@ $(document).ready(function() {
 		$('.container').each(function() {
 			var target = $(this).offset().top;
 			var id = $(this).attr('id');
-			
+
 			if (position >= target) {
 				$('#menu > ul > li > a').removeClass('active');
 				$('#menu > ul > li > a[href=#' + id + ']').addClass('active');
 			}
 		});
 	});
+
 
 	// randomly apply image sizes and positions
 
@@ -50,9 +53,9 @@ $(document).ready(function() {
 	function makeUniqueRandom() {
 	    // refill the array if needed
 	    if (!uniqueRandoms.length) {
-	        for (var i = 0; i < numRandoms; i++) {
-	            uniqueRandoms.push(i);
-	        }
+	    	for (var i = 0; i < numRandoms; i++) {
+	    		uniqueRandoms.push(i);
+	    	}
 	    }
 	    var index = Math.floor(Math.random() * uniqueRandoms.length);
 	    var val = uniqueRandoms[index];
@@ -69,14 +72,43 @@ $(document).ready(function() {
 
 	// apply image and position randomly
 	$('.random').each(function() {
-  		$(this).addClass('image-pos-' + (makeUniqueRandom() + 1));
+		$(this).addClass('image-pos-' + (makeUniqueRandom() + 1));
 		$(this).addClass('image-size-' + sizes[~~(Math.random()*sizes.length)]);
 	});	
 
 	if ( isMobile() ) {	
 	}	
 
+	// expand talks to show full description
 
+	// $('#expand').click(function(){
+	// 	$('.talk-contain').animate({height:'100%', "flex-basis":"100%"}, 500);
+	// });
+
+// 	$( ".talk-contain #expand" ).click(function() {
+//   $( ".talk-contain" ).toggleClass( "more", 1000000);
+// });
+
+    // $('#expand').click( function() {
+    //     var toggleWidth = $(".talk-contain").width() == "100%" ? "30%" : "100%";
+    //     $('.talk-contain').animate({ width: toggleWidth });
+    // });
+
+$('#expand').click(function(){
+	if ($(".talk-contain").hasClass('wide')) {
+		$(".talk-contain").removeClass('wide');
+		$( "#expand p" ).replaceWith( 'Minimize Descriptions' );
+	} else {
+		$(".talk-contain").addClass('wide');
+		$( "#expand p" ).replaceWith( 'Expand Descriptions' );
+	}
+});
+
+var stickyElements = document.getElementsByClassName('sticky');
+
+for (var i = stickyElements.length - 1; i >= 0; i--) {
+    Stickyfill.add(stickyElements[i]);
+}
 
 });
 
@@ -89,11 +121,11 @@ $( window ).load(function() {
 
 
  	// show randomly placed images when window is loaded
-	$( '.random' ).each(function() {
-		$(this).addClass('show');
-	});	
+ 	$( '.random' ).each(function() {
+ 		$(this).addClass('show');
+ 	});	
 
 
-});	
+ });	
 
 

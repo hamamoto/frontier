@@ -192,14 +192,66 @@ a:hover{
 }
 
 /* People */
+.talk-contain{
+	position:relative;
+	 height: auto;
+    width: 100%;
+   
+    margin-bottom: 25px;
+    overflow: hidden;
+    -webkit-transition-duration: 0.8s;
 
-#people{    
 }
 
-#people ul {
+.talk{
+	position: relative;
+    height: 65%;
+    flex-basis: 30%;
+    padding-bottom: 50px;
+    margin: 0 1.5% 0;
+    overflow:hidden;
+}
+
+.more{
+	width: 100%;
+	height: auto;
+    -webkit-transition-duration: 0.8s;
+}
+
+.wide{
+    width: 30%;
+    height: 200px;
+     -webkit-transition-duration: 0.8s;
+}
+
+#expand{
+	position:absolute;
+	top:0px;
+	right:5%;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    display: table;
+}
+
+
+#people{
+  	flex-flow: row wrap;
+  	justify-content: center;	    
+}
+
+/*#people ul {
 	flex-basis: 30%;
 	margin: 0 1.5% 100px;
-}
+}*/
 
 #people ul li{
 	margin-bottom: 15px;
