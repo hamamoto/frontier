@@ -68,7 +68,7 @@ $(document).ready(function() {
 	}
 
 	// array for random sizes
-	var sizes = [1.25, 2.25, 3.25, 4.25];
+	var sizes = [1, 2, 3, 4];
 
 	// apply image and position randomly
 	$('.random').each(function() {
@@ -95,12 +95,12 @@ $(document).ready(function() {
     // });
 
 	$('#expand').click(function(){
-		if ($(".talk-contain").hasClass('wide')) {
-			$(".talk-contain").removeClass('wide');
-			$( "#expand p" ).html( 'Minimize Descriptions' );
+		if ($(this).parent().hasClass('wide')) {
+			$(this).parent().removeClass('wide');
+			$( "#expand p" ).html( '-' );
 		} else {
-			$(".talk-contain").addClass('wide');
-			$( "#expand p" ).html( 'Expand Descriptions' );
+			$(this).parent().addClass('wide');
+			$( "#expand p" ).html( '+' );
 		}
 	});
 

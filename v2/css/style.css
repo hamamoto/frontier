@@ -221,11 +221,10 @@ a:hover{
 
 
 .talk-contain.wide{
-	flex-basis: 30%;
-	padding-bottom: 50px;
+	flex-basis: 100%;
+	/*padding-bottom: 50px;*/
 	margin: 0 1.5% 75px;
-
-	height: 200px;
+	height: 30px;
 	overflow: hidden;
 
 }
@@ -237,18 +236,22 @@ a:hover{
 }
 
 .more{
-	width: 100%;
-	height: auto;
+	/*width: 100%;*/
+	height: 100%;
 	-webkit-transition-duration: 0.8s;
 }
 
 #expand{
-	position:relative;
-	left:40%;
+	position:absolute;
+	left:80%;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 5%;
+	top: 0%;
 	z-index: 100;
+}
+
+#expand p{
+	font-size: 30px;
 }
 
 .sticky {
