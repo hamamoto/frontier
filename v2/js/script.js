@@ -94,7 +94,7 @@ $(document).ready(function() {
     //     $('.talk-contain').animate({ width: toggleWidth });
     // });
 
-	$('#expand').click(function(){
+	$('.talk-contain #expand').click(function(){
 		if ($(this).parent().hasClass('wide')) {
 			$(this).parent().removeClass('wide');
 			$( "#expand p" ).html( '-' );
