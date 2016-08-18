@@ -68,7 +68,7 @@ $(document).ready(function() {
 	}
 
 	// array for random sizes
-	var sizes = [1, 2, 3, 4];
+	var sizes = [1.25, 2.25, 3.25, 4.25];
 
 	// apply image and position randomly
 	$('.random').each(function() {
