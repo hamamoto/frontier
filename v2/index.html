@@ -24,14 +24,14 @@
 		</ul>
 	</div>
 	<div id="images-holder">
-		<img src="img/JulietteCezzar.jpeg" class="random"></img>
-		<img src="img/MarcEnglish.jpg" class="random"></img>
-		<img src="img/AprilGreiman.jpg" class="random"></img>
-		<img src="img/RickGriffith.jpg" class="random"></img>
-		<img src="img/YarrowKraner.jpg" class="random"></img>	
-		<img src="img/SakiMafundikwa.jpg" class="random"></img>
-		<img src="http://cdn.yellowstoneparknet.com/images/home/summer.jpg" class="random" />
-		<img src="http://www.bozeman-magpie.com/article_images/embedded/images/welcome_to_bzn_sign.jpg" class="random" />	
+		<img src="img/JulietteCezzar.jpeg" id="image-1" class="random"></img>
+		<img src="img/MarcEnglish.jpg" id="image-2" class="random"></img>
+		<img src="img/AprilGreiman.jpg" id="image-3" class="random"></img>
+		<img src="img/RickGriffith.jpg" id="image-4" class="random"></img>
+		<img src="img/YarrowKraner.jpg" id="image-5" class="random"></img>	
+		<img src="img/SakiMafundikwa.jpg" id="image-6" class="random"></img>
+		<img src="http://cdn.yellowstoneparknet.com/images/home/summer.jpg" id="image-7" class="random" />
+		<img src="http://www.bozeman-magpie.com/article_images/embedded/images/welcome_to_bzn_sign.jpg" id="image-8" class="random" />	
 	</div>
 
 	<div id="allcontainer" class="transparent">	
@@ -46,7 +46,7 @@
 			</div>
 		</div>
 		<div class="container" id="instigators">
-			<ul>
+			<ul class="image-hover" data-image="image-1">
 				<li class="presenter">
 					<b>Juliette Cezzar</b><br />
 					Assistant Professor and Associate Director<br />
@@ -61,7 +61,7 @@
 				</li>
 			</ul>
 
-			<ul>
+			<ul class="image-hover" data-image="image-2">
 				<li class="presenter">
 					<b>Marc English</b><br />
 					Assistant Professor and Associate Director<br />
@@ -76,7 +76,7 @@
 				</li>
 			</ul>
 
-			<ul>
+			<ul class="image-hover" data-image="image-3">
 				<li class="presenter">
 					<b class = "title">April Greiman</b><br />
 					Assistant Professor and Associate Director<br />
@@ -91,7 +91,7 @@
 				</li>
 			</ul>
 
-			<ul>
+			<ul class="image-hover" data-image="image-4">
 				<li class="presenter">
 					<b>Rick Griffith</b><br />
 					Assistant Professor and Associate Director<br />
@@ -106,7 +106,7 @@
 				</li>
 			</ul>
 
-			<ul>
+			<ul class="image-hover" data-image="image-5">
 				<li class="presenter">
 					<b>Yarrow Kraner</b><br />
 					Assistant Professor and Associate Director<br />
@@ -121,7 +121,7 @@
 				</li>
 			</ul>
 
-			<ul>
+			<ul class="image-hover" data-image="image-6">
 				<li class="presenter">
 					<b>Saki Mafundikwa</b><br />
 					Assistant Professor and Associate Director<br />
@@ -371,7 +371,7 @@
 		</div>
 
 		<div class="container" id="location">	
-			<div class="location-item" id="about-location">
+			<div class="location-item image-hover" id="about-location" data-image="image-7">
 				<h3>Location</h3>
 				<p><b>Bozeman, Montana</b><br/>
 					Bozeman is a small town situated in the beautiful and remote Northern Rocky Mountains adjacent to Yellowstone National Park, and October is an ideal time for outdoor recreation and wildlife viewing. Concurrent to the conference The Museum of the Rockies will be hosting an international exhibit: Leisure and Luxury in the Age of Nero: The Villas of Oplontis near Pompeii. We recommend extending your stay a day or two to enjoy the amenities, outdoor opportunities, and culture of this special place.
@@ -388,7 +388,7 @@
 			</div>
 
 
-			<div class="location-item">
+			<div class="location-item image-hover" data-image="image-8">
 				<h3>Lodging</h3>
 				<!-- option 1-->
 				<p><b>Bozeman Inn</b><br/>

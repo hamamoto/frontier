@@ -94,22 +94,30 @@ $(document).ready(function() {
     //     $('.talk-contain').animate({ width: toggleWidth });
     // });
 
-$('#expand').click(function(){
-	if ($(".talk-contain").hasClass('wide')) {
-		$(".talk-contain").removeClass('wide');
-		$( "#expand p" ).replaceWith( 'Minimize Descriptions' );
-	} else {
-		$(".talk-contain").addClass('wide');
-		$( "#expand p" ).replaceWith( 'Expand Descriptions' );
+	$('#expand').click(function(){
+		if ($(".talk-contain").hasClass('wide')) {
+			$(".talk-contain").removeClass('wide');
+			$( "#expand p" ).html( 'Minimize Descriptions' );
+		} else {
+			$(".talk-contain").addClass('wide');
+			$( "#expand p" ).html( 'Expand Descriptions' );
+		}
+	});
+
+
+	var stickyElements = document.getElementsByClassName('sticky');
+
+	for (var i = stickyElements.length - 1; i >= 0; i--) {
+	    Stickyfill.add(stickyElements[i]);
 	}
-});
 
-
-var stickyElements = document.getElementsByClassName('sticky');
-
-for (var i = stickyElements.length - 1; i >= 0; i--) {
-    Stickyfill.add(stickyElements[i]);
-}
+	$('.image-hover').hover(function() {
+		var image = $(this).attr("data-image");
+		$('#'+image).addClass('hover');
+	}, function() {
+		var image = $(this).attr("data-image");
+		$('#'+image).removeClass('hover');
+	});
 
 });
 

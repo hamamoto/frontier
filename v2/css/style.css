@@ -391,8 +391,8 @@ filter: grayscale(80%);*/
 #images-holder img{
 	-webkit-filter: blur(15px);
 	filter: blur(15px);
-	-webkit-transition: all 1000ms;
-	transition: all 1000ms;			
+	-webkit-transition: all 2500ms;
+	transition: all 2500ms;			
 
 	/*mix-blend-mode: multiply;*/
 	
@@ -405,6 +405,13 @@ filter: grayscale(80%);*/
 	opacity: .35;	
 }
 
+#images-holder img.hover {
+	opacity: 1;	
+	-webkit-filter: blur(0px);
+	filter: blur(0px);	
+
+	z-index: 100000;
+}
 
 /* image sizes */
 
