@@ -223,8 +223,8 @@ a:hover{
 .talk-contain.wide{
 	flex-basis: 100%;
 	/*padding-bottom: 50px;*/
-	margin: 0 1.5% 75px;
-	height: 30px;
+	margin: 0 0 50px;
+	height: auto;
 	overflow: hidden;
 
 }
@@ -248,12 +248,17 @@ a:hover{
 	position: sticky;
 	top: 0%;
 	z-index: 100;
+	cursor:pointer;
 }
 
 #expand p{
 	font-size: 30px;
 }
 
+.hide{
+	display:none;
+	transition:opacity 0.5s linear;
+}
 .sticky {
 	position: -webkit-sticky;
 	position: sticky;
@@ -277,7 +282,7 @@ a:hover{
 	}*/
 
 	#people ul li{
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 	}
 
 	#people ul li a{

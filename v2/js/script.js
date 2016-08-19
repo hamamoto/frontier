@@ -81,28 +81,23 @@ $(document).ready(function() {
 
 	// expand talks to show full description
 
-	// $('#expand').click(function(){
-	// 	$('.talk-contain').animate({height:'100%', "flex-basis":"100%"}, 500);
-	// });
-
-// 	$( ".talk-contain #expand" ).click(function() {
-//   $( ".talk-contain" ).toggleClass( "more", 1000000);
-// });
-
-    // $('#expand').click( function() {
-    //     var toggleWidth = $(".talk-contain").width() == "100%" ? "30%" : "100%";
-    //     $('.talk-contain').animate({ width: toggleWidth });
-    // });
-
 	$('.talk-contain #expand').click(function(){
-		if ($(this).parent().hasClass('wide')) {
-			$(this).parent().removeClass('wide');
+		if ($(this).siblings(".details").hasClass('hide')) {
+			$(this).siblings(".details").removeClass('hide');
 			$( "#expand p" ).html( '-' );
 		} else {
-			$(this).parent().addClass('wide');
+			$(this).siblings(".details").addClass('hide');
 			$( "#expand p" ).html( '+' );
 		}
 	});
+
+// $('.talk-contain #expand').click(function(){
+// 		$(this).siblings(".details").toggleClass( "hide");
+// 	});
+
+
+
+
 
 
 	var stickyElements = document.getElementsByClassName('sticky');
