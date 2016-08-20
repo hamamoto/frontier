@@ -204,8 +204,6 @@ var init3dType = function() {
 	object = new THREE.Object3D();
 	scene.add(object);
 
-	// createInitial();
-
 	onResize();
 
 	addEvents();
@@ -227,10 +225,7 @@ var onImageLoad = function() {
   var drawWidth = cWidth;
   var drawHeight = cWidth /ratio;
 
-
   ctx.drawImage(image, 0, 0, drawWidth, drawHeight);
-  // ctx.fillStyle = 'white';
-  // ctx.fillRect(0, 0, 200, 200);
 
   var planeGeo = new THREE.PlaneGeometry(230, 230, 20, 20);
   plane = new THREE.Mesh(planeGeo, material);
@@ -239,12 +234,8 @@ var onImageLoad = function() {
 
   plane.rotation.z = 180*DEG_TO_RAD;
   plane.position.y = 70;
-  // plane.position.z = -50;
-
 
   texture.needsUpdate = true;
-
-  // console.log('loaded', imageloaded);
 };
 
 var initCanvas = function() {
@@ -257,158 +248,68 @@ var initCanvas = function() {
 
   canvas.width = cWidth;
   canvas.height = cHeight;
-
-  drawCanvas();
-};
-
-var drawCanvas = function(t) {
-  // ctx.clearRect(0, 0, cWidth, cHeight);
-  // if (!t) {
-  //   t = 0;
-  // }
-
-  // // console.log('t',t);
-  // ctx.strokeStyle = 'white';
-  // // ctx.fillRect(0, 0, 200, 200);
-  // var steps = 30;
-  // var stepSize = 360/steps;
-
-  // ctx.clearRect(0, 0, cWidth, cHeight);
-
-  // for (var i = 0; i < steps; i++) {
-  //   ctx.save();
-  //   ctx.translate(cWidth/2, cHeight/2);
-  //   ctx.rotate((stepSize * i+t*10)*DEG_TO_RAD);
-  //   ctx.beginPath();
-  //   ctx.moveTo(0,0);
-  //   ctx.lineTo(cWidth,2);
-  //   ctx.stroke();
-  //   ctx.restore();
-  // }
-  // // console.log('s', t*1000);
-  // // ctx.rotate(t*1000);
-  // if (texture) {
-  //   texture.needsUpdate = true;
-  // }
-  // console.log('c', imageloaded);
-    if (imageloaded) {
-      // console.log('loadeder');
-      // ctx.clearRect(0, 0, cWidth, cHeight);
-      // ctx.drawImage(image, 0, 0, cWidth, cHeight);
-
-      if (texture) {
-        texture.needsUpdate = true;
-      }
-    }
-
-
 };
 
 var init3d = function() {
 
-  renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-  renderer.setSize(wrapWidth, wrapHeight);
-  renderer.setClearColor(0xff0000, 0.0);
+	if (Detector.webgl) {
+		renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+		renderer.setSize(wrapWidth, wrapHeight);
+		renderer.setClearColor(0xff0000, 0.0);
 
-  $wrap.append(renderer.domElement);
-  $webglCanvas = $(renderer.domElement);
-  // document.body.appendChild(renderer.domElement);
+		$wrap.append(renderer.domElement);
+		$webglCanvas = $(renderer.domElement);
 
-  clock = new THREE.Clock();
+		clock = new THREE.Clock();
 
-  scene = new THREE.Scene();
+		scene = new THREE.Scene();
 
-  camera = new THREE.PerspectiveCamera(10000, wrapWidth/wrapHeight, 0.1, 10000);
-  camera.position.z = 65;
-  camera.lookAt(new THREE.Vector3(0, 0 ,0));
-
-  // controls = new THREE.OrbitControls( camera, renderer.domElement );
-
-  // var bg = new THREE.Mesh(new THREE.PlaneGeometry(5000, 5000, 1, 1), new THREE.MeshBasicMaterial({transparent:true, opacity:.1, color:0x000000}));
-  //   bg.position.z = -80;
-  //   scene.add(bg);
-
-  // //SPOTLIGHT
-  // light = new THREE.SpotLight( 0xffffff, 10 );
-  // light.position.set( 0, 10, 50, 13 );
-
-
-  //light.castShadow = true;
-
-  // light.shadowMapWidth = 1024;
-  // light.shadowMapHeight = 1024;
-
-  // light.shadowCameraNear = 10;
-  // light.shadowCameraFar = 10000;
-  // light.shadowCameraFov = 30;
-
-  // scene.add( light );
+		camera = new THREE.PerspectiveCamera(10000, wrapWidth/wrapHeight, 0.1, 10000);
+		camera.position.z = 65;
+		camera.lookAt(new THREE.Vector3(0, 0 ,0));
+	}
+	else {
+		$('h1, h2').css({
+			opacity: 1
+		});
+	}
 };
 
 var initShaderMaterial = function() {
-  texture = new THREE.Texture(canvas);
-  texture.needsUpdate = true;
+	texture = new THREE.Texture(canvas);
+	texture.needsUpdate = true;
 
-  var uniforms = {
-      texture:    { type: "t", value: texture },
-      canvasSize:   { type: "2f", value: [cWidth, cHeight]},
-      time:           { type: "f", value: 1.0 },
-      mouse:           { type: "2f", value: [1.0, 1.0]}
-  };
+	var uniforms = {
+	  texture:    { type: "t", value: texture },
+	  canvasSize:   { type: "2f", value: [cWidth, cHeight]},
+	  time:           { type: "f", value: 1.0 },
+	  mouse:           { type: "2f", value: [1.0, 1.0]}
+	};
 
-  material = new THREE.ShaderMaterial({
-      uniforms: uniforms,
-      vertexShader: $('.vertexShader')[0].textContent,
-      fragmentShader: $('.fragmentShader')[0].textContent,
-      // depthTest: false,
-      transparent: true
-      // blending: THREE.AdditiveBlending
-  });
+	material = new THREE.ShaderMaterial({
+	  uniforms: uniforms,
+	  vertexShader: $('.vertexShader')[0].textContent,
+	  fragmentShader: $('.fragmentShader')[0].textContent,
+	  transparent: true
+	});
 
-  material.needsUpdate = true;
+	material.needsUpdate = true;
 };
-
-var createInitial = function() {
-
-  var planeGeo = new THREE.PlaneGeometry(150, 150, 50, 50);
-  plane = new THREE.Mesh(planeGeo, material);
-
-  object.add(plane);
-
-  plane.rotation.z = 180*DEG_TO_RAD;
-};
-
 
 
 var render = function() {
-  var time = clock.getElapsedTime();
-  // console.log('time', time);
-  // drawCanvas(time);
 
-  material.uniforms.mouse.value = [targetMouseX, targetMouseY];
-  material.uniforms.time.value = time;
+	targetMouseX += (mouseX - targetMouseX) * 0.03;
+	targetMouseY += (mouseY - targetMouseY) * 0.03;
 
-  targetMouseX += (mouseX - targetMouseX) * 0.03;
-  targetMouseY += (mouseY - targetMouseY) * 0.03;
+	if (Detector.webgl) {
+		time = clock.getElapsedTime();
 
-  // object.rotation.z += targetMouseX*0.01;
-  // object.rotation.x = targetMouseY*0.1;
+		material.uniforms.mouse.value = [targetMouseX, targetMouseY];
+		material.uniforms.time.value = time;
 
-  // setPositions(time);
-
-  // for (var i = 0; i < lines.length; i++) {
-  //   var line = lines[i];
-  //   line.material.uniforms.time.value = (Date.now()-line.material.uniforms.startTime.value)/1000;
-
-  //   line.material.uniforms.mx.value = mouseX;
-  //   line.material.uniforms.my.value = mouseY;
-  //   // console.log('tine', Date.now()-line.material.uniforms.startTime.value);
-  // }
-  // console.log('render');
-
-  // material.needsUpdate = true;
-
-	renderer.render(scene, camera);
+		renderer.render(scene, camera);
+	}
 
 	requestAnimFrame(render);
 };
@@ -439,8 +340,6 @@ var onResize = function() {
 
 	wrapWidth = $wrap.outerWidth()+wrapPadding*2;
 	wrapHeight = $wrap.outerHeight()+wrapPadding*2;
-
-
 
 	camera.aspect = wrapWidth / wrapHeight;
 	camera.updateProjectionMatrix();

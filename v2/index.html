@@ -483,30 +483,17 @@
 
 									uniform sampler2D texture;
 
-									varying vec3 vPosition;
+									// varying vec3 vPosition;
 									varying vec2 vUvCoords;
 
 
 									void main() {
 
 										vUvCoords = uv;
-										// vNormal = normal;
 
-										// vec3 newPosition = position;
-
-										// newPosition.y += 1.0 + sin(time+position.y*0.25)* 2.4+5.0 ;
-										// newPosition.x += 1.0 + cos(time+position.x*0.25)* 2.4+5.0 ;
-										// newPosition.x += 1.0 + (position.x*mx*50.0) ;
-
-
-										// newPosition += 1.0 +  vec3(0.0, 0.0, 4.0) * 0.2 + ((sin(sin(time*0.1)*0.2*position.x)*2.0)*1.0);
-										// newPosition += 1.0 +  vec3(0.0, 4.0, 0.0) * 0.2 + ((sin(sin(time*0.1)*0.2*position.y)*2.0)*1.0);
 										vec3 newPosition = position.xyz + vec3(2.0, 2.0, 2.0) * sin((position.x)*0.04 + position.y*0.04 + time*0.8);
 										newPosition.z -= 40.5;
-										// newPosition.y += 5.1 * sin(-mouse.y*2.15) * newPosition.z;
 										newPosition += vec3(0.0, 0.0, 2.0) * sin(-mouse.x*0.15)*position.x;
-										// newPosition += vec3(0.0, 2.0, 2.0) * sin(-mouse.y*0.1)*position.y;
-										vPosition = newPosition;
 
 										vec4 mvPosition = modelViewMatrix * vec4(newPosition, 1.0);
 
@@ -529,20 +516,6 @@
 
 										vec4 outColor = texture2D( texture, vUvCoords );
 
-										// vec4 sum = vec4( 0.0 );
-										// float v = 0.004;
-
-										// sum += texture2D( texture, vec2( vUvCoords.x + 4.0 * v, vUvCoords.y - 4.0 * v ) ) * 0.051;
-										// sum += texture2D( texture, vec2( vUvCoords.x + 3.0 * v, vUvCoords.y - 3.0 * v ) ) * 0.0918;
-										// sum += texture2D( texture, vec2( vUvCoords.x + 2.0 * v, vUvCoords.y - 2.0 * v ) ) * 0.12245;
-										// sum += texture2D( texture, vec2( vUvCoords.x + 1.0 * v , vUvCoords.y - 1.0 * v ) ) * 0.1531;
-										// sum += texture2D( texture, vec2( vUvCoords.x, vUvCoords.y ) ) * 0.1633;
-										// sum += texture2D( texture, vec2( vUvCoords.x - 1.0 * v, vUvCoords.y + 1.0 * v ) ) * 0.1531;
-										// sum += texture2D( texture, vec2( vUvCoords.x  - 2.0 * v , vUvCoords.y + 2.0 * v ) ) * 0.12245;
-										// sum += texture2D( texture, vec2( vUvCoords.x - 3.0 * v , vUvCoords.y + 3.0 * v ) ) * 0.0918;
-										// sum += texture2D( texture, vec2( vUvCoords.x - 4.0 * v, vUvCoords.y + 4.0 * v ) ) * 0.051;
-
-										// gl_FragColor = sum;
 										gl_FragColor = outColor;
 										// if (outColor.a < 0.5) {
 										// 	discard;
@@ -557,6 +530,7 @@
 									<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 									<script src="js/jquery.smooth-scroll.js"></script>
 									<script type="text/javascript" src="js/three.min.js"></script>
+									<script type="text/javascript" src="js/Detector.js"></script>
 									<script src="js/script.js"></script>
 									<script src="js/stickyfill.js"></script>
 
