@@ -28,7 +28,7 @@
 	font-weight: normal;
 	font-style: normal;
 
-}	
+}
 
 
 body {
@@ -57,7 +57,7 @@ a {
 	z-index: 10;
 
 	-webkit-transition: opacity 1200ms;
-	transition: opacity 1200ms;		
+	transition: opacity 1200ms;
 
 }
 
@@ -87,7 +87,7 @@ a:hover{
 	left:0;
 
 	-webkit-transition: opacity 1200ms;
-	transition: opacity 1200ms;		
+	transition: opacity 1200ms;
 
 }
 
@@ -96,9 +96,9 @@ a:hover{
 	width:100%;
 	min-height: 100vh;
 	display: flex;
-	align-items: flex-start;	
+	align-items: flex-start;
 	flex-flow: row wrap;
-	justify-content: center;	
+	justify-content: center;
 	box-sizing: border-box;
 	padding: 5% 15%;
 }
@@ -107,9 +107,9 @@ a:hover{
 	width:100%;
 	min-height: 100vh;
 	display: flex;
-	align-items: flex-start;	
+	align-items: flex-start;
 	flex-flow: row wrap;
-	justify-content: center;	
+	justify-content: center;
 	box-sizing: border-box;
 }
 
@@ -120,7 +120,7 @@ a:hover{
 /* About */
 
 #about{
-	align-items: center;	
+	align-items: center;
 }
 
 #about p {
@@ -173,6 +173,18 @@ a:hover{
 	justify-content: center;
 }
 
+
+#frontier .type {
+	position: relative;
+}
+
+#frontier .type canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: transparent;
+}
+
 #frontier h1 {
 	font-size: 180px;
 }
@@ -184,7 +196,7 @@ a:hover{
 
 /* Schedule */
 
-#schedule{   	
+#schedule{
 }
 
 .day {
@@ -273,7 +285,7 @@ a:hover{
 
     #people{
     	flex-flow: row wrap;
-    	justify-content: center;	    
+    	justify-content: center;
     }
 
 /*#people ul {
@@ -303,7 +315,7 @@ a:hover{
 
 	/* registration */
 
-	#registration{	
+	#registration{
 	}
 
 	#registration div{
@@ -348,11 +360,11 @@ p.note {
 
 #location{
 	flex-flow: row wrap;
-	justify-content: center;	    
+	justify-content: center;
 }
 
 #location a{
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 #location a::after{
@@ -383,12 +395,12 @@ p.note {
 	filter: blur(15px);
 
 	-webkit-transition: all 1000ms;
-	transition: all 1000ms;			
+	transition: all 1000ms;
 
 
-	
+
 	/*mix-blend-mode: multiply;*/
-	
+
 	opacity: .35;
 
 /*	-webkit-filter: grayscale(80%);
@@ -406,23 +418,23 @@ filter: grayscale(80%);*/
 	-webkit-filter: blur(15px);
 	filter: blur(15px);
 	-webkit-transition: all 1750ms;
-	transition: all 1750ms;			
+	transition: all 1750ms;
 
 	/*mix-blend-mode: multiply;*/
-	
-	opacity: 0;	
+
+	opacity: 0;
 }
 
 /* show images once they have been arranged */
 
 #images-holder img.show{
-	opacity: .35;	
+	opacity: .35;
 }
 
 #images-holder img.hover {
-	opacity: 1;	
+	opacity: 1;
 	-webkit-filter: blur(0px);
-	filter: blur(0px);	
+	filter: blur(0px);
 
 	z-index: 100000;
 }
@@ -430,22 +442,22 @@ filter: grayscale(80%);*/
 /* image sizes */
 
 .image-size-1, .image-size-1 img {
-	width: 200px;	
+	width: 200px;
 	height: auto;
 }
 
 .image-size-2, .image-size-2 img {
-	width: 300px;	
+	width: 300px;
 	height: auto;
 }
 
 .image-size-3, .image-size-3 img {
-	width: 400px;	
+	width: 400px;
 	height: auto;
 }
 
 .image-size-4, .image-size-4 img {
-	width: 400px;	
+	width: 400px;
 	height: auto;
 }
 
@@ -455,7 +467,7 @@ filter: grayscale(80%);*/
 /* image arrangement */
 
 .image-pos-1, .image-pos-2, .image-pos-3, .image-pos-4, .image-pos-5, .image-pos-6, .image-pos-7, .image-pos-8{
-	position: absolute;	
+	position: absolute;
 }
 
 .image-pos-1 {
@@ -516,10 +528,10 @@ filter: grayscale(80%);*/
 
 
 
-/* image text positions 
+/* image text positions
 
 .image-text-pos-1, .image-text-pos-2, .image-text-pos-3, .image-text-pos-4, .image-text-pos-5, .image-text-pos-6 {
-	position: absolute;	
+	position: absolute;
 }
 
 .image-text-pos-1 {
@@ -556,7 +568,7 @@ filter: grayscale(80%);*/
 
 /* smaller desktops / laptops */
 
-@media only screen and (max-width : 1024px) { 
+@media only screen and (max-width : 1024px) {
 
 }
 
@@ -564,7 +576,7 @@ filter: grayscale(80%);*/
 /* phone */
 
 
-@media only screen and (max-width : 667px) { 
+@media only screen and (max-width : 667px) {
 
 	body {
 		font-size: 18px;
@@ -581,7 +593,7 @@ filter: grayscale(80%);*/
 		width: 100vw;
 
 		-webkit-transition: opacity 1200ms;
-		transition: opacity 1200ms;		
+		transition: opacity 1200ms;
 
 		background: #1d1d1d;
 
@@ -661,7 +673,7 @@ filter: grayscale(80%);*/
 	/* images */
 
 	#images-holder img.show{
-		opacity: .15;	
+		opacity: .15;
 	}
 
 
