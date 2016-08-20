@@ -152,7 +152,7 @@ var $webglCanvas = null;
 var $wrap = null;
 var wrapWidth = 0;
 var wrapHeight = 0;
-var wrapPadding = 50;
+var wrapPadding = 150;
 
 var wWidth = 0;
 var wHeight = 0;
@@ -238,7 +238,8 @@ var onImageLoad = function() {
   object.add(plane);
 
   plane.rotation.z = 180*DEG_TO_RAD;
-  plane.position.y = 60;
+  plane.position.y = 70;
+  // plane.position.z = -50;
 
 
   texture.needsUpdate = true;
@@ -387,8 +388,8 @@ var render = function() {
   material.uniforms.mouse.value = [targetMouseX, targetMouseY];
   material.uniforms.time.value = time;
 
-  targetMouseX += (mouseX - targetMouseX) * 0.1;
-  targetMouseY += (mouseY - targetMouseY) * 0.1;
+  targetMouseX += (mouseX - targetMouseX) * 0.03;
+  targetMouseY += (mouseY - targetMouseY) * 0.03;
 
   // object.rotation.z += targetMouseX*0.01;
   // object.rotation.x = targetMouseY*0.1;
@@ -430,8 +431,11 @@ var onMouseMove = function(e) {
 };
 
 var onResize = function() {
+
 	wWidth = window.innerWidth;
 	wHeight = window.innerHeight;
+
+	wrapPadding = $wrap.outerWidth()/5;
 
 	wrapWidth = $wrap.outerWidth()+wrapPadding*2;
 	wrapHeight = $wrap.outerHeight()+wrapPadding*2;
