@@ -84,20 +84,18 @@ $(document).ready(function() {
 	$('.talk-contain #expand').click(function(){
 		if ($(this).siblings(".details").hasClass('hide')) {
 			$(this).siblings(".details").removeClass('hide');
-			$( "#expand p" ).html( '-' );
+			$(this).siblings(".details").children(".bio").animate({ "opacity": "1" }, 500);
+			$(this).siblings(".details").children(".desc").animate({ "opacity": "1" }, 500);
+			$(this).siblings(".details").children(".links").animate({ "opacity": "1" }, 500);
+			$( this ).html( '<p>-</p>' );
 		} else {
 			$(this).siblings(".details").addClass('hide');
-			$( "#expand p" ).html( '+' );
+			$(this).siblings(".details").children(".bio").animate({ "opacity": "0" }, 500);
+			$(this).siblings(".details").children(".desc").animate({ "opacity": "0" }, 500);
+			$(this).siblings(".details").children(".links").animate({ "opacity": "0" }, 500);
+			$( this ).html( '<p>+</p>' );
 		}
 	});
-
-// $('.talk-contain #expand').click(function(){
-// 		$(this).siblings(".details").toggleClass( "hide");
-// 	});
-
-
-
-
 
 
 	var stickyElements = document.getElementsByClassName('sticky');

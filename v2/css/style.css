@@ -257,7 +257,19 @@ a:hover{
 
 .hide{
 	display:none;
-	transition:opacity 0.5s linear;
+	opacity: 0;
+   transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -webkit-transition: opacity 1s ease-in-out;
+}
+   
+}
+
+.fade{
+	opacity: 0;
+   transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -webkit-transition: opacity 1s ease-in-out;
 }
 .sticky {
 	position: -webkit-sticky;
@@ -299,6 +311,18 @@ a:hover{
 
 	.presenter {
 		padding-left: 20px;
+	}
+
+	.desc{
+		opacity: 0;
+	}
+
+	.bio{
+		opacity:0;
+	}
+
+	.links{
+		opacity:0;
 	}
 
 	/* registration */
