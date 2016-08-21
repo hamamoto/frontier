@@ -190,6 +190,8 @@ a:hover{
 	opacity: 0;
 	position: relative;
 	z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 11px;
 }
 
 #frontier h2 {
