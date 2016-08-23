@@ -280,7 +280,7 @@ a:hover{
 	left:0%;
 	position: -webkit-sticky;
 	position: sticky;
-	top: -10%;
+	top: 0%;
 	z-index: 100;
 	cursor:pointer;
 }
@@ -811,14 +811,17 @@ filter: grayscale(80%);*/
 
 	/* make multi column layouts 1 column*/
 
-	#instigators ul, #people ul, .day, .location-item {
+	.talk #people ul{
+		flex-basis: 100%;
+		margin: 0 0% 100px 35px;
+	}
+
+	#instigators ul, .day, .location-item {
 		flex-basis: 100%;
 		margin: 0 0% 100px;
 	}
 
-	.talk{
-		margin-left: 35px;
-	}
+
 
 
 
