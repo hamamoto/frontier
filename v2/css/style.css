@@ -640,8 +640,8 @@ filter: grayscale(80%);*/
 .menuIcon{
 	position:fixed;
 	top:4%;
-	width:50px;
-	height:50px;
+	width:30px;
+	height:30px;
 }
 
 .close:hover{
@@ -670,35 +670,36 @@ filter: grayscale(80%);*/
 
 
 .menubar1{
-	position:absolute;
-	width:100%;
-	height:6px;
-	z-index: 200;
-	background-color: #bd10e0;
+	position: absolute;
+    width: 100%;
+    top: 6px;
+    height: 4px;
+    z-index: 200;
+    background-color: #bd10e0;
 }
 
 .menubar2{
-	position:absolute;
-	width:100%;
-	height:6px;
-	top:15px;
-	z-index: 200;
-	background-color: #bd10e0;
+	position: absolute;
+    width: 100%;
+    height: 4px;
+    top: 16px;
+    z-index: 200;
+    background-color: #bd10e0;
 }
 
 .menubar3{
-	position:absolute;
-	width:100%;
-	height:6px;
-	top:30px;
-	z-index: 200;
-	background-color: #bd10e0;
+	position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0px;
+    z-index: 200;
+    background-color: #bd10e0;
 }
 
 .menubarClose1{
 	position:absolute;
 	width:100%;
-	height:6px;
+	height:4px;
 	z-index: 200;
 	top:15px;
 	background-color: #bd10e0;
@@ -712,7 +713,7 @@ filter: grayscale(80%);*/
 .menubarClose2{
 	position:absolute;
 	width:100%;
-	height:6px;
+	height:4px;
 	top:15px;
 	z-index: 200;
 	background-color: #bd10e0;
