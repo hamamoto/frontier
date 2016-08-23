@@ -98,6 +98,22 @@ $(document).ready(function() {
 		});
 	});
 
+// active scroll mobile
+	$(window).scroll(function() {
+
+		var position = $(this).scrollTop();
+
+		$('.container').each(function() {
+			var target = $(this).offset().top;
+			var id = $(this).attr('id');
+
+			if (position >= target) {
+				$('#menuMobile > ul > li > a').removeClass('active');
+				$('#menuMobile > ul > li > a[href=#' + id + ']').addClass('active');
+			}
+		});
+	});
+
 
 	// randomly apply image sizes and positions
 
