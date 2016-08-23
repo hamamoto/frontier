@@ -1,12 +1,12 @@
 // anim frame
 
 window.requestAnimFrame = (function(){
-  return  window.requestAnimationFrame       ||
-          window.webkitRequestAnimationFrame ||
-          window.mozRequestAnimationFrame    ||
-          function( callback ){
-            window.setTimeout(callback, 1000 / 60);
-          };
+	return  window.requestAnimationFrame       ||
+	window.webkitRequestAnimationFrame ||
+	window.mozRequestAnimationFrame    ||
+	function( callback ){
+		window.setTimeout(callback, 1000 / 60);
+	};
 })();
 
 
@@ -27,8 +27,49 @@ function isDesktop(){
 
 $(document).ready(function() {
 
+	$('.home').click('click touchstart', function() {
+		$('#menuMobile').animate({opacity: '1'}, 120);
+		$('#menuMobile').animate({"z-index": '1000'}, 120); 
+		$(this).animate({opacity: '0'}, 300);
+		$(this).css({"z-index": '1000'}, 120);
+		$('.homeClose').animate({opacity: '1'}, 300);
+		$('.homeClose').css({"z-index": '2000'}, 120); 
+	});
+
+	$('.homeClose').click('click touchstart', function() {
+		$('#menuMobile').animate({opacity: '0'}, 120); 
+		$('#menuMobile').animate({"z-index": '-10'}, 120); 
+		$(this).animate({opacity: '0'}, 300);  
+		$(this).css({"z-index": '1000'}, 120);  
+		$('.home').animate({opacity: '1'}, 300);
+		$('.home').css({"z-index": '2000'}, 120); 
+	});
+
+	$('.home').click('click touchstart', function() {
+		$('#menuMobile').animate({opacity: '1'}, 120);
+		$('#menuMobile').animate({"z-index": '1000'}, 120); 
+		$(this).animate({opacity: '0'}, 300);
+		$(this).css({"z-index": '1000'}, 120);
+		$('.homeClose').animate({opacity: '1'}, 300);
+		$('.homeClose').css({"z-index": '2000'}, 120); 
+	});
+
 
 	$('#menu a').click(function(event){
+		event.preventDefault();
+		var link = this;
+		$.smoothScroll({
+			scrollTarget: link.hash
+		});
+	});
+
+	$('#menuMobile a').click(function(event){
+		$("#menuMobile").animate({opacity: '0'}, 300);
+		$("#menuMobile").css({"z-index": '-10'}, 120);
+		$('.home').animate({opacity: '1'}, 300);
+		$('.home').css({"z-index": '2000'}, 120); 
+		$('.homeClose').animate({opacity: '0'}, 300);
+		$('.homeClose').css({"z-index": '1000'}, 120); 
 		event.preventDefault();
 		var link = this;
 		$.smoothScroll({
@@ -114,7 +155,7 @@ $(document).ready(function() {
 	var stickyElements = document.getElementsByClassName('sticky');
 
 	for (var i = stickyElements.length - 1; i >= 0; i--) {
-	    Stickyfill.add(stickyElements[i]);
+		Stickyfill.add(stickyElements[i]);
 	}
 
 	$('.image-hover').hover(function() {
@@ -210,42 +251,42 @@ var init3dType = function() {
 };
 
 var loadImage = function() {
-  image = new Image();
-  image.onload = onImageLoad;
-  image.src = imageSrc;
+	image = new Image();
+	image.onload = onImageLoad;
+	image.src = imageSrc;
 };
 
 var onImageLoad = function() {
 
-  imageloaded = true;
+	imageloaded = true;
 
-  var ratio = image.naturalWidth/image.naturalHeight;
-  var drawWidth = cWidth;
-  var drawHeight = cWidth /ratio;
+	var ratio = image.naturalWidth/image.naturalHeight;
+	var drawWidth = cWidth;
+	var drawHeight = cWidth /ratio;
 
-  ctx.drawImage(image, 0, 0, drawWidth, drawHeight);
+	ctx.drawImage(image, 0, 0, drawWidth, drawHeight);
 
-  var planeGeo = new THREE.PlaneGeometry(230, 230, 20, 20);
-  plane = new THREE.Mesh(planeGeo, material);
+	var planeGeo = new THREE.PlaneGeometry(230, 230, 20, 20);
+	plane = new THREE.Mesh(planeGeo, material);
 
-  object.add(plane);
+	object.add(plane);
 
-  plane.rotation.z = 180*DEG_TO_RAD;
-  plane.position.y = 70;
+	plane.rotation.z = 180*DEG_TO_RAD;
+	plane.position.y = 70;
 
-  texture.needsUpdate = true;
+	texture.needsUpdate = true;
 };
 
 var initCanvas = function() {
-  canvas = document.createElement('canvas');
-  ctx = canvas.getContext('2d');
+	canvas = document.createElement('canvas');
+	ctx = canvas.getContext('2d');
 
 // document.body.appendChild((canvas));
 
-  canvas.style.position = 'absolute';
+canvas.style.position = 'absolute';
 
-  canvas.width = cWidth;
-  canvas.height = cHeight;
+canvas.width = cWidth;
+canvas.height = cHeight;
 };
 
 var init3d = function() {
@@ -278,17 +319,17 @@ var initShaderMaterial = function() {
 	texture.needsUpdate = true;
 
 	var uniforms = {
-	  texture:    { type: "t", value: texture },
-	  canvasSize:   { type: "2f", value: [cWidth, cHeight]},
-	  time:           { type: "f", value: 1.0 },
-	  mouse:           { type: "2f", value: [1.0, 1.0]}
+		texture:    { type: "t", value: texture },
+		canvasSize:   { type: "2f", value: [cWidth, cHeight]},
+		time:           { type: "f", value: 1.0 },
+		mouse:           { type: "2f", value: [1.0, 1.0]}
 	};
 
 	material = new THREE.ShaderMaterial({
-	  uniforms: uniforms,
-	  vertexShader: $('.vertexShader')[0].textContent,
-	  fragmentShader: $('.fragmentShader')[0].textContent,
-	  transparent: true
+		uniforms: uniforms,
+		vertexShader: $('.vertexShader')[0].textContent,
+		fragmentShader: $('.fragmentShader')[0].textContent,
+		transparent: true
 	});
 
 	material.needsUpdate = true;
