@@ -266,6 +266,7 @@ a:hover{
 .talk{
 	position: relative;
 	overflow: hidden;
+	margin-left: 35px;
 }
 
 .more{
@@ -276,10 +277,10 @@ a:hover{
 
 #expand{
 	position:absolute;
-	left:80%;
+	left:0%;
 	position: -webkit-sticky;
 	position: sticky;
-	top: 0%;
+	top: -10%;
 	z-index: 100;
 	cursor:pointer;
 }
@@ -639,7 +640,7 @@ filter: grayscale(80%);*/
 
 .menuIcon{
 	position:fixed;
-	top:4%;
+	top:1%;
 	width:30px;
 	height:30px;
 }
@@ -740,6 +741,15 @@ filter: grayscale(80%);*/
 		display: none;
 	}
 
+/*.menuMobileBG{
+	position:fixed;
+	height:50px;
+	width:100%;
+	top:0;
+	background: rgba(29, 29, 29, 1);
+	z-index:1000;
+
+}*/
 
 	#menuMobile{
 		position:fixed;
@@ -774,7 +784,7 @@ filter: grayscale(80%);*/
 	/* sections */
 
 	.container{
-		padding: 20px;
+		padding: 50px;
 	}
 
 
@@ -805,6 +815,12 @@ filter: grayscale(80%);*/
 		flex-basis: 100%;
 		margin: 0 0% 100px;
 	}
+
+	.talk{
+		margin-left: 35px;
+	}
+
+
 
 	/* Special CSS for Registration */
 
