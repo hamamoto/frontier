@@ -173,8 +173,8 @@
 		<div class="container" id="frontier" >
 			<div class="type">
 				<h1>Frontier</h1>
+				<h2 class = "image-hover" data-image="image-8">Bozeman, Montana</h2>
 			</div>
-			<h2 class="image-hover" data-image="image-8">Bozeman, Montana</h2>
 		</div>
 		<div class="container" id="schedule">
 			<div id="dayone" class="day">
@@ -442,6 +442,7 @@
 		</p>
 	</div>
 
+
 	<div class="location-item image-hover" data-image="image-8">
 		<h3>Lodging</h3>
 		<!-- option 1-->
@@ -505,81 +506,68 @@
 
 									<div class="container" id="colophon"></div>
 								</div>
-								>>>>>>> ff6334b4287645bff3aecc5e14a402bb28dcfa87
-
-								<div class="container" id="colophon"></div>
-							</div>
 
 
 
 
-							<<<<<<< HEAD
 
-							<script class="vertexShader" type="x-shader/x-vertex">
+								<script class="vertexShader" type="x-shader/x-vertex">
 
-							uniform float time;
-							uniform vec2 mouse;
+								uniform float time;
+								uniform vec2 mouse;
 
-							uniform sampler2D texture;
-							=======
-							<script class="vertexShader" type="x-shader/x-vertex">
+								uniform sampler2D texture;
 
-							uniform float time;
-							uniform vec2 mouse;
-
-							uniform sampler2D texture;
-							>>>>>>> ff6334b4287645bff3aecc5e14a402bb28dcfa87
-
-// varying vec3 vPosition;
-varying vec2 vUvCoords;
+									// varying vec3 vPosition;
+									varying vec2 vUvCoords;
 
 
-void main() {
+									void main() {
 
-	vUvCoords = uv;
+										vUvCoords = uv;
 
-	vec3 newPosition = position.xyz + vec3(2.0, 2.0, 2.0) * sin((position.x)*0.02 + position.y*0.02 + time*0.2);
-	newPosition.z -= 40.5;
-	newPosition += vec3(0.0, 0.0, 2.0) * sin(-mouse.x*0.04)*position.x;
+										vec3 newPosition = position.xyz + vec3(2.0, 2.0, 2.0) * sin((position.x)*0.04 + position.y*0.04 + time*0.8);
+										newPosition.z -= 40.5;
+										newPosition += vec3(0.0, 0.0, 2.0) * sin(-mouse.x*0.15)*position.x;
 
-	vec4 mvPosition = modelViewMatrix * vec4(newPosition, 1.0);
+										vec4 mvPosition = modelViewMatrix * vec4(newPosition, 1.0);
 
-	gl_Position = projectionMatrix * mvPosition;
+										gl_Position = projectionMatrix * mvPosition;
 
-}
-</script>
+									}
+									</script>
 
-<script class="fragmentShader" type="x-shader/x-vertex">
+									<script class="fragmentShader" type="x-shader/x-vertex">
 
-uniform float time;
-uniform vec2 mouse;
+									uniform float time;
+									uniform vec2 mouse;
 
-uniform sampler2D texture;
+									uniform sampler2D texture;
 
-varying vec3 vPosition;
-varying vec2 vUvCoords;
+									varying vec3 vPosition;
+									varying vec2 vUvCoords;
 
-void main() {
+									void main() {
 
-	vec4 outColor = texture2D( texture, vUvCoords );
+										vec4 outColor = texture2D( texture, vUvCoords );
 
-	gl_FragColor = outColor;
-// if (outColor.a < 0.5) {
-// 	discard;
-// }
-}
+										gl_FragColor = outColor;
+										// if (outColor.a < 0.5) {
+										// 	discard;
+										// }
+									}
 
-</script>
+									</script>
 
-<script>
+									<script>
 
-</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="js/jquery.smooth-scroll.js"></script>
-<script type="text/javascript" src="js/three.min.js"></script>
-<script type="text/javascript" src="js/Detector.js"></script>
-<script src="js/script.js"></script>
-<script src="js/stickyfill.js"></script>
+									</script>
+									<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+									<script src="js/jquery.smooth-scroll.js"></script>
+									<script type="text/javascript" src="js/three.min.js"></script>
+									<script type="text/javascript" src="js/Detector.js"></script>
+									<script src="js/script.js"></script>
+									<script src="js/stickyfill.js"></script>
 
-</body>
-</html>
+								</body>
+								</html>
