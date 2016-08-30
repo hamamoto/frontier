@@ -151,7 +151,7 @@ $(document).ready(function() {
 
 	// expand talks to show full description
 
-	$('.talk-contain #expand').click(function(){
+	$(document).on('click', '.talk-contain #expand', function(){ 
 		if ($(this).siblings(".details").hasClass('hide')) {
 			$(this).siblings(".details").removeClass('hide');
 			$(this).siblings(".details").children(".bio").animate({ "opacity": "1" }, 500);
@@ -182,7 +182,48 @@ $(document).ready(function() {
 		$('#'+image).removeClass('hover');
 	});
 
+
+	// get talks description
+
+	 // ID of the Google Spreadsheet
+	var spreadsheetID = "SPREADSHEET KEY";
+
+	// Make sure it is public or set to Anyone with link can view 
+	var url = "https://spreadsheets.google.com/feeds/list/1Bq5TQsknqSHRYumJM5rsoe-wfLxQDXNqMBsXOh55fGY/od6/public/values?alt=json";
+
+	$.getJSON(url, function(data) {
+
+		var entry = data.feed.entry;
+
+		$(entry).each(function(){
+			// Column names are name, age, etc.
+			$('#colophon').prepend(
+			'<div class="talk-contain wide"><a id="expand"><p>+</p></a><ul class="talk"><li class="title">'
+			+this.gsx$title.$t+
+			'</li></ul><ul class="details hide"><li class="presenter">'
+			+this.gsx$name.$t+					
+			'<br />'
+			+this.gsx$institution.$t+
+			'</li><li class="desc">'
+			+this.gsx$desc.$t+
+			'</li><li class="bio">'
+			+this.gsx$bio.$t+
+			'<li class="links"><a href="'
+			+this.gsx$web.$t+
+			' target="_blank">'
+			+this.gsx$web.$t+
+			'</a></li><li class="links"><a href="https://twitter.com/'
+			+this.gsx$social.$t+
+			'" target="_blank">'
+			+this.gsx$social.$t+
+			'</a></li></ul></div>'
+			);
+		});
+
+	});
 });
+
+
 
 $( window ).load(function() {
     // position page at center
