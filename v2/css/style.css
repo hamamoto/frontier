@@ -112,7 +112,7 @@ a:hover{
 	flex-flow: row wrap;
 	justify-content: center;
 	box-sizing: border-box;
-	padding: 5% 15%;
+	padding: 1% 15% 5% 15%;
 }
 .containerStick{
 	position:relative;
@@ -162,6 +162,10 @@ a:hover{
 
 #instigators ul li a::after{
 	content: " →";
+}
+
+#instigators .bio{
+	opacity:1;
 }
 
 .title {
