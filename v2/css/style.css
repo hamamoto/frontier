@@ -339,8 +339,9 @@ a:hover{
 		content: " →";
 	}
 
-	.title {
+	.talk-contain .title {
 		font-weight: bold;
+		font-size:18px;
 	}
 
 	.presenter {
