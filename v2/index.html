@@ -1592,123 +1592,125 @@
 				3 miles from the Montana State University campus.</p>
 
 				<p>Address: 1235 N 7th Ave, Bozeman, MT 59715<br />
-					<p>Phone:(406) 587-3176</p>
+				<p>Phone:(406) 587-3176</p>
 
-					<!-- option 2-->
-					<p><b>Element Hotel</b><br/>
-						Stylish, contemporary extended-stay hotel with a fitness room, plus free breakfast &amp; Wi-Fi.<br />
-						3 miles from the Montana State University campus.</p>
-						<p>Address: 25 East Mendenhall Street, Bozeman, MT 59715<br />
-							Phone:(406) 582-4972<br />
-							<a href="www.larkbozeman.com" target="_blank">http://www.elementbozeman.com</a></p>
+				<!-- option 2-->
+				<p><b>Element Hotel</b><br/>
+				Stylish, contemporary extended-stay hotel with a fitness room, plus free breakfast &amp; Wi-Fi.<br />
+				3 miles from the Montana State University campus.</p>
+				<p>Address: 25 East Mendenhall Street, Bozeman, MT 59715<br />
+				Phone:(406) 582-4972<br />
+				<a href="www.larkbozeman.com" target="_blank">http://www.elementbozeman.com</a></p>
 
-							<!-- option 3-->
-							<p><b>Lark Hotel</b><br/>
-								Modern hotel with a quirky vibe &amp; minimalist decor featuring original art &amp; a taco truck.<br />
-								2 miles from the Montana State University campus.</p>
-								<p>Address: 122 W Main St, Bozeman, MT 59715<br />
-									Phone:(866) 464-1000<br />
-									<a href="www.larkbozeman.com" target="_blank">www.larkbozeman.com</a></p>
-								</div>
-								<div class="location-item">
-									<h3>Directions</h3>
+				<!-- option 3-->
+				<p><b>Lark Hotel</b><br/>
+				Modern hotel with a quirky vibe &amp; minimalist decor featuring original art &amp; a taco truck.<br />
+				2 miles from the Montana State University campus.</p>
+				<p>Address: 122 W Main St, Bozeman, MT 59715<br />
+					Phone:(866) 464-1000<br />
+				<a href="www.larkbozeman.com" target="_blank">www.larkbozeman.com</a></p>
+			</div>
+			<div class="location-item">
+			<h3>Directions</h3>
 
-									<p>Bozeman, Montana is located 11 miles South West of the Bozeman Yellowstone International Airport (BZN). Two interstate exits will bring you to the MSU campus in Bozeman.</p>
+			<p>Bozeman, Montana is located 11 miles South West of the Bozeman Yellowstone International Airport (BZN). Two interstate exits will bring you to the MSU campus in Bozeman.</p>
 
-									<p>From the west:<br />
-										Take exit 305 onto North 19th Ave. and follow it south approximately 3.5 miles to Kagy Blvd.<br />
-										Turn left onto Kagy Blvd. and continue to South 7th Ave.
-									</p>
-									<p>From the east:<br />
-										Take exit 309 onto Main Street and proceed west to Willson Ave.<br />
-										Turn left on Willson Ave. and travel 18 blocks to Kagy Blvd. <br />
-										Turn right on Kagy Blvd. and continue to South 7th Ave.
-									</p>
-								</div>
-								<div class="location-item">
-									<h3>Transportation</h3>
+			<p>From the west:<br />
+				Take exit 305 onto North 19th Ave. and follow it south approximately 3.5 miles to Kagy Blvd.<br />
+				Turn left onto Kagy Blvd. and continue to South 7th Ave.
+			</p>
+			<p>From the east:<br />
+				Take exit 309 onto Main Street and proceed west to Willson Ave.<br />
+				Turn left on Willson Ave. and travel 18 blocks to Kagy Blvd. <br />
+				Turn right on Kagy Blvd. and continue to South 7th Ave.
+			</p>
+		</div>
+		<div class="location-item">
+			<h3>Transportation</h3>
 
-									<p><b>Taxi Services</b><br/>
-										Taxi services and some hotels provide transportation to town.
-									</p>
+			<p><b>Taxi Services</b><br/>
+				Taxi services and some hotels provide transportation to town.
+			</p>
 
-									<p>Greater Valley Taxi<br/>
-										www.greatervalleytaxi.com<br/>
-										Phone:(406) 587-6303</p>
+			<p>Greater Valley Taxi<br/>
+				www.greatervalleytaxi.com<br/>
+				Phone:(406) 587-6303</p>
 
-										<p><b>Public Transportation</b><br/>
-											Streamline Bus<br />
-											The public bus system provides service throughout the Bozeman area to fulfill everyone’s transportation needs. Due to support from several sources, the public bus system is provided free of charge. Visit the Streamline Website for Schedules. <a href="http://www.streamlinebus.com">http://www.streamlinebus.com</a></p>
+			<p><b>Public Transportation</b><br/>
+			Streamline Bus<br />
+			The public bus system provides service throughout the Bozeman area to fulfill everyone’s transportation needs. Due to support from several sources, the public bus system is provided free of charge. Visit the Streamline Website for Schedules. <a href="http://www.streamlinebus.com">http://www.streamlinebus.com</a></p>
 
-											<p><b>UBER</b><br />
-												They are supposed to launch service AUG 1 in Montana…</p>
-											</div>
-										</div>
+			<p><b>UBER</b><br />
+				They are supposed to launch service AUG 1 in Montana…</p>
+			</div>
+		</div>
 
-										<div class="container" id="colophon"></div>
-									</div>
-
-
-
-
-
-									<script class="vertexShader" type="x-shader/x-vertex">
-
-									uniform float time;
-									uniform vec2 mouse;
-
-									uniform sampler2D texture;
-
-									// varying vec3 vPosition;
-									varying vec2 vUvCoords;
+		<div class="container" id="colophon">
+			
+		</div>
+</div>
 
 
-									void main() {
 
-										vUvCoords = uv;
 
-										vec3 newPosition = position.xyz + vec3(2.0, 2.0, 2.0) * sin((position.x)*0.04 + position.y*0.04 + time*0.8);
-										newPosition.z -= 40.5;
-										newPosition += vec3(0.0, 0.0, 2.0) * sin(-mouse.x*0.15)*position.x;
 
-										vec4 mvPosition = modelViewMatrix * vec4(newPosition, 1.0);
+<script class="vertexShader" type="x-shader/x-vertex">
 
-										gl_Position = projectionMatrix * mvPosition;
+uniform float time;
+uniform vec2 mouse;
 
-									}
-									</script>
+uniform sampler2D texture;
 
-									<script class="fragmentShader" type="x-shader/x-vertex">
+// varying vec3 vPosition;
+varying vec2 vUvCoords;
 
-									uniform float time;
-									uniform vec2 mouse;
 
-									uniform sampler2D texture;
+void main() {
 
-									varying vec3 vPosition;
-									varying vec2 vUvCoords;
+	vUvCoords = uv;
 
-									void main() {
+	vec3 newPosition = position.xyz + vec3(2.0, 2.0, 2.0) * sin((position.x)*0.04 + position.y*0.04 + time*0.8);
+	newPosition.z -= 40.5;
+	newPosition += vec3(0.0, 0.0, 2.0) * sin(-mouse.x*0.15)*position.x;
 
-										vec4 outColor = texture2D( texture, vUvCoords );
+	vec4 mvPosition = modelViewMatrix * vec4(newPosition, 1.0);
 
-										gl_FragColor = outColor;
-										// if (outColor.a < 0.5) {
-										// 	discard;
-										// }
-									}
+	gl_Position = projectionMatrix * mvPosition;
 
-									</script>
+}
+</script>
 
-									<script>
+<script class="fragmentShader" type="x-shader/x-vertex">
 
-									</script>
-									<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-									<script src="js/jquery.smooth-scroll.js"></script>
-									<script type="text/javascript" src="js/three.min.js"></script>
-									<script type="text/javascript" src="js/Detector.js"></script>
-									<script src="js/script.js"></script>
-									<script src="js/stickyfill.js"></script>
+uniform float time;
+uniform vec2 mouse;
 
-								</body>
-								</html>
+uniform sampler2D texture;
+
+varying vec3 vPosition;
+varying vec2 vUvCoords;
+
+void main() {
+
+	vec4 outColor = texture2D( texture, vUvCoords );
+
+	gl_FragColor = outColor;
+	// if (outColor.a < 0.5) {
+	// 	discard;
+	// }
+}
+
+</script>
+
+<script>
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>
+<script type="text/javascript" src="js/three.min.js"></script>
+<script type="text/javascript" src="js/Detector.js"></script>
+<script src="js/script.js"></script>
+<script src="js/stickyfill.js"></script>
+
+</body>
+</html>
