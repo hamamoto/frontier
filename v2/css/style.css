@@ -344,7 +344,7 @@ a:hover{
 	}
 
 	.presenter {
-		padding-left: 20px;
+		padding-left: 35px;
 	}
 
 	.desc{
@@ -357,6 +357,10 @@ a:hover{
 
 	.links{
 		opacity:0;
+	}
+
+	.details{
+		margin-bottom: 35px;
 	}
 
 	/* registration */
