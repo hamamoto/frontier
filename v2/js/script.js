@@ -29,29 +29,29 @@ $(document).ready(function() {
 
 	$('.home').click('click touchstart', function() {
 		$('#menuMobile').animate({opacity: '1'}, 120);
-		$('#menuMobile').animate({"z-index": '1000'}, 120); 
+		$('#menuMobile').animate({"z-index": '1000'}, 120);
 		$(this).animate({opacity: '0'}, 300);
 		$(this).css({"z-index": '1000'}, 120);
 		$('.homeClose').animate({opacity: '1'}, 300);
-		$('.homeClose').css({"z-index": '2000'}, 120); 
+		$('.homeClose').css({"z-index": '2000'}, 120);
 	});
 
 	$('.homeClose').click('click touchstart', function() {
-		$('#menuMobile').animate({opacity: '0'}, 120); 
-		$('#menuMobile').animate({"z-index": '-10'}, 120); 
-		$(this).animate({opacity: '0'}, 300);  
-		$(this).css({"z-index": '1000'}, 120);  
+		$('#menuMobile').animate({opacity: '0'}, 120);
+		$('#menuMobile').animate({"z-index": '-10'}, 120);
+		$(this).animate({opacity: '0'}, 300);
+		$(this).css({"z-index": '1000'}, 120);
 		$('.home').animate({opacity: '1'}, 300);
-		$('.home').css({"z-index": '2000'}, 120); 
+		$('.home').css({"z-index": '2000'}, 120);
 	});
 
 	$('.home').click('click touchstart', function() {
 		$('#menuMobile').animate({opacity: '1'}, 120);
-		$('#menuMobile').animate({"z-index": '1000'}, 120); 
+		$('#menuMobile').animate({"z-index": '1000'}, 120);
 		$(this).animate({opacity: '0'}, 300);
 		$(this).css({"z-index": '1000'}, 120);
 		$('.homeClose').animate({opacity: '1'}, 300);
-		$('.homeClose').css({"z-index": '2000'}, 120); 
+		$('.homeClose').css({"z-index": '2000'}, 120);
 	});
 
 
@@ -67,9 +67,9 @@ $(document).ready(function() {
 		$("#menuMobile").animate({opacity: '0'}, 300);
 		$("#menuMobile").css({"z-index": '-10'}, 120);
 		$('.home').animate({opacity: '1'}, 300);
-		$('.home').css({"z-index": '2000'}, 120); 
+		$('.home').css({"z-index": '2000'}, 120);
 		$('.homeClose').animate({opacity: '0'}, 300);
-		$('.homeClose').css({"z-index": '1000'}, 120); 
+		$('.homeClose').css({"z-index": '1000'}, 120);
 		event.preventDefault();
 		var link = this;
 		$.smoothScroll({
@@ -151,7 +151,7 @@ $(document).ready(function() {
 
 	// expand talks to show full description
 
-	$(document).on('click', '.talk-contain #expand', function(){ 
+	$(document).on('click', '.talk-contain #expand', function(){
 		if ($(this).siblings(".details").hasClass('hide')) {
 			$(this).siblings(".details").removeClass('hide');
 			$(this).siblings(".details").children(".bio").animate({ "opacity": "1" }, 500);
@@ -188,7 +188,7 @@ $(document).ready(function() {
 	 // ID of the Google Spreadsheet
 	var spreadsheetID = "SPREADSHEET KEY";
 
-	// Make sure it is public or set to Anyone with link can view 
+	// Make sure it is public or set to Anyone with link can view
 	var url = "https://spreadsheets.google.com/feeds/list/1Bq5TQsknqSHRYumJM5rsoe-wfLxQDXNqMBsXOh55fGY/od6/public/values?alt=json";
 
 	$.getJSON(url, function(data) {
@@ -328,6 +328,8 @@ var ctx = null;
 var cWidth = 1024;
 var cHeight = 1024;
 
+var distortionAmount = 1;
+
 
 var init3dType = function() {
 
@@ -425,7 +427,8 @@ var initShaderMaterial = function() {
 		texture:    { type: "t", value: texture },
 		canvasSize:   { type: "2f", value: [cWidth, cHeight]},
 		time:           { type: "f", value: 1.0 },
-		mouse:           { type: "2f", value: [1.0, 1.0]}
+		mouse:           { type: "2f", value: [1.0, 1.0]},
+		distortionAmount: { type: "f", value: this.distortionAmount}
 	};
 
 	material = new THREE.ShaderMaterial({

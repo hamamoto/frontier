@@ -204,6 +204,7 @@ a:hover{
 
 #frontier h1 {
 	font-size: 180px;
+	line-height: 100px;
 	opacity: 0;
 	position: relative;
 	z-index: 1;
@@ -356,7 +357,7 @@ a:hover{
 
 
 	.institution {
-		text-indent: 35px;		
+		text-indent: 35px;
 	}
 
 	.desc{
@@ -369,7 +370,7 @@ a:hover{
 	}
 
 	.links{
-		text-indent: 35px;		
+		text-indent: 35px;
 		opacity:0;
 		text-decoration: underline;
 	}
@@ -638,7 +639,10 @@ filter: grayscale(80%);*/
 /* smaller desktops / laptops */
 
 @media only screen and (max-width : 1024px) {
-
+	#frontier h1 {
+		font-size: 100px;
+		line-height: 100px;
+	}
 }
 
 
