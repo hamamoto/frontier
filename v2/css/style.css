@@ -40,6 +40,7 @@ body {
 
 a {
 	color: #bd10e0;
+	text-decoration: underline;
 }
 
 /* hide till loaded */
@@ -160,9 +161,9 @@ a:hover{
 	display: block;
 }
 
-#instigators ul li a::after{
+/*#instigators ul li a::after{
 	content: " →";
-}
+}*/
 
 #instigators .bio{
 	opacity:1;
@@ -287,6 +288,7 @@ a:hover{
 	top: 0%;
 	z-index: 100;
 	cursor:pointer;
+	text-decoration: none;
 }
 
 #expand p{
@@ -332,16 +334,16 @@ a:hover{
 	}*/
 
 	#people ul li{
-		margin-bottom: 10px;
+		/*margin-bottom: 10px;*/
 	}
 
 	#people ul li a{
 		display: block;
 	}
 
-	#people ul li a::after{
+/*	#people ul li a::after{
 		content: " →";
-	}
+	}*/
 
 	.talk-contain .title {
 		font-weight: bold;
@@ -352,17 +354,29 @@ a:hover{
 		padding-left: 35px;
 	}
 
+
+	.institution {
+		text-indent: 35px;		
+	}
+
 	.desc{
 		opacity: 0;
 	}
 
 	.bio{
+		text-indent: 35px;
 		opacity:0;
 	}
 
 	.links{
+		text-indent: 35px;		
 		opacity:0;
+		text-decoration: underline;
 	}
+
+/*	.links a::after{
+		content: " →";
+	}*/
 
 	.details{
 		margin-bottom: 35px;
@@ -402,9 +416,9 @@ a:hover{
 	margin-bottom: 40px;
 }
 
-.purchase a::after{
+/*.purchase a::after{
 	content: " →";
-}
+}*/
 
 p.note {
 	font-size: 11px;
@@ -421,11 +435,11 @@ p.note {
 #location a{
 	text-decoration: none;
 }
-
+/*
 #location a::after{
 	content: " →";
 }
-
+*/
 .location-item {
 	flex-basis: 19%;
 	margin: 0 1.5%;

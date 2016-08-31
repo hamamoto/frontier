@@ -197,25 +197,71 @@ $(document).ready(function() {
 
 		$(entry).each(function(){
 			// Column names are name, age, etc.
-			$('#colophon').prepend(
+			$('#people').prepend(
 			'<div class="talk-contain wide"><a id="expand"><p>+</p></a><ul class="talk"><li class="title">'
 			+this.gsx$title.$t+
 			'</li></ul><ul class="details hide"><li class="presenter">'
-			+this.gsx$name.$t+					
-			'<br />'
-			+this.gsx$institution.$t+
+			+this.gsx$name1.$t+'</li><li class="institution">'+this.gsx$institution1.$t+
+			'</li><li class="presenter">'
+			+this.gsx$name2.$t+'</li><li class="institution">'+this.gsx$institution2.$t+
+			'</li><li class="presenter">'
+			+this.gsx$name3.$t+'</li><li class="institution">'+this.gsx$institution3.$t+
+			'</li><li class="presenter">'
+			+this.gsx$name4.$t+'</li><li class="institution">'+this.gsx$institution4.$t+
+			'</li><li class="presenter">'
+			+this.gsx$name5.$t+'</li><li class="institution">'+this.gsx$institution5.$t+
 			'</li><li class="desc">'
 			+this.gsx$desc.$t+
 			'</li><li class="bio">'
-			+this.gsx$bio.$t+
+			+this.gsx$bio1.$t+
 			'<li class="links"><a href="'
-			+this.gsx$web.$t+
+			+this.gsx$web1.$t+
 			' target="_blank">'
-			+this.gsx$web.$t+
+			+this.gsx$web1.$t+
 			'</a></li><li class="links"><a href="https://twitter.com/'
-			+this.gsx$social.$t+
+			+this.gsx$social1.$t+
 			'" target="_blank">'
-			+this.gsx$social.$t+
+			+this.gsx$social1.$t+
+			'</a></li><li class="bio">'
+			+this.gsx$bio2.$t+
+			'<li class="links"><a href="'
+			+this.gsx$web2.$t+
+			' target="_blank">'
+			+this.gsx$web2.$t+
+			'</a></li><li class="links"><a href="https://twitter.com/'
+			+this.gsx$social2.$t+
+			'" target="_blank">'
+			+this.gsx$social2.$t+
+			'</a></li><li class="bio">'
+			+this.gsx$bio3.$t+
+			'<li class="links"><a href="'
+			+this.gsx$web3.$t+
+			' target="_blank">'
+			+this.gsx$web3.$t+
+			'</a></li><li class="links"><a href="https://twitter.com/'
+			+this.gsx$social3.$t+
+			'" target="_blank">'
+			+this.gsx$social3.$t+
+			'</a></li><li class="bio">'
+			+this.gsx$bio4.$t+
+			'<li class="links"><a href="'
+			+this.gsx$web4.$t+
+			' target="_blank">'
+			+this.gsx$web4.$t+
+			'</a></li><li class="links"><a href="https://twitter.com/'
+			+this.gsx$social4.$t+
+			'" target="_blank">'
+			+this.gsx$social4.$t+
+			'</a></li><li class="bio">'
+			+this.gsx$bio5.$t+
+			'<li class="links"><a href="'
+			+this.gsx$web5.$t+
+			' target="_blank">'
+			+this.gsx$web5.$t+
+			'</a></li><li class="links"><a href="https://twitter.com/'
+			+this.gsx$social5.$t+
+			'" target="_blank">'
+			+this.gsx$social5.$t+
 			'</a></li></ul></div>'
 			);
 		});
