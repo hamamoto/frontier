@@ -358,22 +358,25 @@ a:hover{
 
 
 	.institution {
-		text-indent: 35px;
+		margin-bottom: 5px;
+		padding-left: 35px;
 	}
 
 	.desc{
 		opacity: 0;
+		margin-bottom: 15px;
 	}
 
 	.bio{
-		text-indent: 35px;
+		margin-bottom: 15px;
 		opacity:0;
 	}
 
 	.links{
-		text-indent: 35px;
+		
 		opacity:0;
 		text-decoration: underline;
+		margin-bottom: 15px;
 	}
 
 /*	.links a::after{
