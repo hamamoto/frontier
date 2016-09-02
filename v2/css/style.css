@@ -171,7 +171,7 @@ a:hover{
 
 .title {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .presenter {
@@ -243,7 +243,7 @@ a:hover{
 }
 
 .event {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: bold;
 }
 
@@ -437,6 +437,13 @@ p.note {
 	justify-content: center;
 }
 
+#about-location p{
+	width: 820px;
+    font-size: 24px;
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
 #location a{
 	text-decoration: none;
 }
@@ -446,13 +453,59 @@ p.note {
 }
 */
 .location-item {
-	flex-basis: 19%;
+	flex-basis: 30%;
 	margin: 0 1.5%;
 	vertical-align: top;
 }
 
+.location-title{
+	flex-basis: 100%;
+	margin: 0 1.5%;
+	vertical-align: top;
+
+}
+
 #location h3, #location p {
 	margin-bottom: 20px;
+}
+
+#location h3{
+	font-size: 14px;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.lodging-item {
+	flex-basis: 29%;
+	margin: 0 1.5%;
+	vertical-align: top;
+}
+
+.directions-item {
+	flex-basis: 46%;
+	margin: 0 1.5%;
+	vertical-align: top;
+}
+
+#directions-info {
+	flex-basis: 93%;
+}
+
+#directions-info p{
+	font-size: 24px;
+}
+
+#transportation-item{
+	flex-basis: 20%;
+	margin: 0 1.5%;
+	vertical-align: top;
+
+}
+
+
+
+#directions-details {
+	flex-basis: 93%;
 }
 
 #content8{
