@@ -534,6 +534,18 @@ p.note {
 filter: grayscale(80%);*/
 }
 
+#colophon-item{
+	flex-basis: 100%;
+	margin: 0 1.5%;
+	vertical-align: top;
+
+}
+
+#colophon-item p{
+	margin-bottom:25px;
+	width:50%;
+}
+
 
 #images-holder {
 	position: fixed;
