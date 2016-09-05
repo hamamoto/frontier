@@ -208,7 +208,6 @@ $(document).ready(function() {
 			//remove @ from social media handle
 			var socialhandle = this.gsx$social1.$t
 			var cleansocialhandle = socialhandle.replace('@','');
-			alert(cleansocialhandle);
 
 			// Column names are name, age, etc.
 			$('#people').prepend(
