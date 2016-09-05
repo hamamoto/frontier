@@ -98,7 +98,7 @@ $(document).ready(function() {
 		});
 	});
 
-// active scroll mobile
+	// active scroll mobile
 	$(window).scroll(function() {
 
 		var position = $(this).scrollTop();
@@ -139,6 +139,7 @@ $(document).ready(function() {
 
 	// array for random sizes
 	var sizes = [1, 2, 3, 4];
+	var positions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 	// apply image and position randomly
 	$('.random').each(function() {
@@ -146,8 +147,22 @@ $(document).ready(function() {
 		$(this).addClass('image-size-' + sizes[~~(Math.random()*sizes.length)]);
 	});
 
-	if ( isMobile() ) {
-	}
+
+	// apply image and position randomly to speakers images
+	$('.random-speaker').each(function(){
+		$(this).addClass('image-pos-' + positions[~~(Math.random()*sizes.length)]);
+		$(this).addClass('image-size-' + sizes[~~(Math.random()*sizes.length)]);
+	});
+
+	$(document).on('mouseenter', '.image-hover', function(){
+        var image = $(this).attr("data-image");
+		$('#'+image).addClass('hover');
+	});
+
+	$(document).on('mouseleave', '.image-hover', function(){
+        var image = $(this).attr("data-image");
+			$('#'+image).removeClass('hover');
+	});
 
 	// expand talks to show full description
 
@@ -174,13 +189,6 @@ $(document).ready(function() {
 		Stickyfill.add(stickyElements[i]);
 	}
 
-	$('.image-hover').hover(function() {
-		var image = $(this).attr("data-image");
-		$('#'+image).addClass('hover');
-	}, function() {
-		var image = $(this).attr("data-image");
-		$('#'+image).removeClass('hover');
-	});
 
 
 	// get talks description
@@ -196,9 +204,17 @@ $(document).ready(function() {
 		var entry = data.feed.entry;
 
 		$(entry).each(function(){
+			
+			//remove @ from social media handle
+			var socialhandle = this.gsx$social1.$t
+			var cleansocialhandle = socialhandle.replace('@','');
+			alert(cleansocialhandle);
+
 			// Column names are name, age, etc.
 			$('#people').prepend(
-			'<div class="talk-contain wide"><a id="expand"><p>+</p></a><ul class="talk"><li class="title">'
+			'<div class="talk-contain wide"><a id="expand"><p>+</p></a><ul class="talk"><li data-image="'
+			+cleansocialhandle+
+			'" class="title image-hover">'
 			+this.gsx$title.$t+
 			'</li></ul><ul class="details hide"><li class="presenter">'
 			+this.gsx$name1.$t+'</li><li class="institution">'+this.gsx$institution1.$t+

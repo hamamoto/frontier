@@ -460,7 +460,7 @@ p.note {
 
 .location-title{
 	flex-basis: 100%;
-	margin: 0 1.5%;
+	margin: 10% 1.5% 0;
 	vertical-align: top;
 
 }
@@ -570,13 +570,18 @@ filter: grayscale(80%);*/
 	opacity: .35;
 }
 
-#images-holder img.hover {
+#images-holder img.random-speaker{
+	opacity: 0;
+}
+
+#images-holder img.hover, #images-holder img.random-speaker.hover {
 	opacity: 1;
 	-webkit-filter: blur(0px);
 	filter: blur(0px);
 
 	z-index: 100000;
 }
+
 
 /* image sizes */
 
@@ -605,7 +610,7 @@ filter: grayscale(80%);*/
 
 /* image arrangement */
 
-.image-pos-1, .image-pos-2, .image-pos-3, .image-pos-4, .image-pos-5, .image-pos-6, .image-pos-7, .image-pos-8{
+.image-pos-1, .image-pos-2, .image-pos-3, .image-pos-4, .image-pos-5, .image-pos-6, .image-pos-7, .image-pos-8, .image-pos-9, .image-pos-10, .image-pos-11, .image-pos-12, .image-pos-13, .image-pos-14, .image-pos-15, .image-pos-16{
 	position: absolute;
 }
 
@@ -663,6 +668,34 @@ filter: grayscale(80%);*/
 	top: 150px;
 	left: 150px;
 }
+
+.image-pos-12 {
+	top: 350px;
+	left: 190px;
+}
+
+.image-pos-13 {
+	right: 350px;
+	bottom: 190px;
+}
+
+.image-pos-14 {
+	top: 200px;
+	right: 100px;
+}
+
+.image-pos-15 {
+	bottom: 350px;
+	left: 390px;
+}
+
+.image-pos-16 {
+	top: 50px;
+	right: 50px;
+}
+
+
+
 
 
 
@@ -772,7 +805,7 @@ filter: grayscale(80%);*/
     top: 6px;
     height: 4px;
     z-index: 200;
-    background-color: #bd10e0;
+    background-color: #f15c61;
 }
 
 .menubar2{
@@ -781,7 +814,7 @@ filter: grayscale(80%);*/
     height: 4px;
     top: 16px;
     z-index: 200;
-    background-color: #bd10e0;
+    background-color: #f15c61;
 }
 
 .menubar3{
@@ -790,7 +823,7 @@ filter: grayscale(80%);*/
     height: 4px;
     bottom: 0px;
     z-index: 200;
-    background-color: #bd10e0;
+    background-color: #f15c61;
 }
 
 .menubarClose1{
@@ -799,7 +832,7 @@ filter: grayscale(80%);*/
 	height:4px;
 	z-index: 200;
 	top:15px;
-	background-color: #bd10e0;
+	background-color: #f15c61;
 	-webkit-transform: rotate(45deg);  /* Chrome, Safari 3.1+ */
 	-moz-transform: rotate(45deg);  /* Firefox 3.5-15 */
 	-ms-transform: rotate(45deg);  /* IE 9 */
@@ -813,7 +846,7 @@ filter: grayscale(80%);*/
 	height:4px;
 	top:15px;
 	z-index: 200;
-	background-color: #bd10e0;
+	background-color: #f15c61;
 	-webkit-transform: rotate(-45deg);  /* Chrome, Safari 3.1+ */
 	-moz-transform: rotate(-45deg);  /* Firefox 3.5-15 */
 	-ms-transform: rotate(-45deg);  /* IE 9 */
