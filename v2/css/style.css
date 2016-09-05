@@ -34,12 +34,12 @@
 body {
 	font-family: 'Playground', Helvetica, Arial, Sans-Serif;
 	background: #1d1d1d;
-	color: #bd10e0;
+	color: rgba(241, 92, 97, 1);
 	font-size: 14px;
 }
 
 a {
-	color: #bd10e0;
+	color: rgba(241, 92, 97, 1);
 	text-decoration: underline;
 }
 
@@ -80,7 +80,7 @@ ul{
 
 ul li a{
 	text-decoration: none;
-	color: #bd10e0;
+	color: rgba(241, 92, 97, 1);
 }
 
 a:hover{
