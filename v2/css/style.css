@@ -754,7 +754,7 @@ filter: grayscale(80%);*/
 @media only screen and (max-width : 667px) {
 
 	body {
-		font-size: 18px;
+		font-size: 14px;
 	}
 
 	.close{
@@ -947,11 +947,15 @@ filter: grayscale(80%);*/
 
 	#instigators ul, .day, .location-item {
 		flex-basis: 100%;
-		margin: 0 0% 100px;
+		margin: 0 0% 100px 10px;
 	}
 
 
 
+/* Special CSS for Topics */
+#expand{
+	left:4%;
+}
 
 
 	/* Special CSS for Registration */
@@ -968,7 +972,7 @@ filter: grayscale(80%);*/
 	#registration-info p{
 		font-size: 20px;
 		margin-bottom: 40px;
-		margin-right: 40px;
+		margin-left: 10px;
 	}
 
 	.price {
