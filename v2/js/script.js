@@ -28,30 +28,30 @@ function isDesktop(){
 $(document).ready(function() {
 
 	$('.home').click('click touchstart', function() {
-		$('#menuMobile').animate({opacity: '1'}, 120);
-		$('#menuMobile').animate({"z-index": '1000'}, 120);
-		$(this).animate({opacity: '0'}, 300);
-		$(this).css({"z-index": '1000'}, 120);
-		$('.homeClose').animate({opacity: '1'}, 300);
-		$('.homeClose').css({"z-index": '2000'}, 120);
+		$('#menuMobile').animate({opacity: '1'}, 50);
+		$('#menuMobile').animate({"z-index": '1000'}, 50);
+		$(this).animate({opacity: '0'}, 50);
+		$(this).css({"z-index": '1000'}, 50);
+		$('.homeClose').animate({opacity: '1'}, 50);
+		$('.homeClose').css({"z-index": '2000'}, 50);
 	});
 
 	$('.homeClose').click('click touchstart', function() {
-		$('#menuMobile').animate({opacity: '0'}, 120);
-		$('#menuMobile').animate({"z-index": '-10'}, 120);
-		$(this).animate({opacity: '0'}, 300);
-		$(this).css({"z-index": '1000'}, 120);
-		$('.home').animate({opacity: '1'}, 300);
-		$('.home').css({"z-index": '2000'}, 120);
+		$('#menuMobile').animate({opacity: '0'}, 50);
+		$('#menuMobile').animate({"z-index": '-10'}, 50);
+		$(this).animate({opacity: '0'}, 50);
+		$(this).css({"z-index": '1000'}, 50);
+		$('.home').animate({opacity: '1'}, 50);
+		$('.home').css({"z-index": '2000'}, 50);
 	});
 
 	$('.home').click('click touchstart', function() {
-		$('#menuMobile').animate({opacity: '1'}, 120);
-		$('#menuMobile').animate({"z-index": '1000'}, 120);
-		$(this).animate({opacity: '0'}, 300);
-		$(this).css({"z-index": '1000'}, 120);
-		$('.homeClose').animate({opacity: '1'}, 300);
-		$('.homeClose').css({"z-index": '2000'}, 120);
+		$('#menuMobile').animate({opacity: '1'}, 50);
+		$('#menuMobile').animate({"z-index": '1000'}, 50);
+		$(this).animate({opacity: '0'}, 50);
+		$(this).css({"z-index": '1000'}, 50);
+		$('.homeClose').animate({opacity: '1'}, 50);
+		$('.homeClose').css({"z-index": '2000'}, 50);
 	});
 
 
