@@ -143,6 +143,10 @@ a:hover{
 	margin-bottom: 30px;
 }
 
+.content{
+	margin: 0 0% 20px 10px;
+}
+
 /* Instigators */
 
 #instigators {
@@ -392,12 +396,12 @@ a:hover{
 	#registration{
 	}
 
-	#registration div{
+	/*#registration div{
 		height: 500px;
-/*	flex-basis: 30%;
+	flex-basis: 30%;
 
-*/	margin: 1.5%;
-}
+	margin: 1.5%;
+}*/
 
 #registration-info {
 	flex-basis: 60%;
@@ -438,7 +442,7 @@ p.note {
 }
 
 #about-location p{
-	width: 820px;
+	width: 100%;
     font-size: 24px;
     margin: 0px;
     margin-bottom: 30px;
@@ -453,7 +457,7 @@ p.note {
 }
 */
 .location-item {
-	flex-basis: 30%;
+	flex-basis: 100%;
 	margin: 0 1.5%;
 	vertical-align: top;
 }
@@ -469,10 +473,11 @@ p.note {
 	margin-bottom: 20px;
 }
 
-#location h3{
+ h3{
 	font-size: 14px;
 	font-weight: normal;
 	text-decoration: underline;
+	margin-bottom: 20px;
 }
 
 .lodging-item {
@@ -947,7 +952,7 @@ filter: grayscale(80%);*/
 
 	#instigators ul, .day, .location-item {
 		flex-basis: 100%;
-		margin: 0 0% 100px 10px;
+		margin: 0 0% 20px 10px;
 	}
 
 
@@ -960,10 +965,10 @@ filter: grayscale(80%);*/
 
 	/* Special CSS for Registration */
 
-	#registration div{
+	/*#registration div{
 		height: auto;
 		margin: 0px;
-	}
+	}*/
 
 	#registration-info, #registration-prices {
 		flex-basis: 100%;
@@ -973,6 +978,7 @@ filter: grayscale(80%);*/
 		font-size: 20px;
 		margin-bottom: 40px;
 		margin-left: 10px;
+		margin-right: 0px;
 	}
 
 	.price {
@@ -988,6 +994,26 @@ filter: grayscale(80%);*/
 	#images-holder img.show{
 		opacity: .15;
 	}
+
+
+	/* Special CSS for Location */
+
+
+#about-location p{
+
+	font-size: 16px;
+}
+	#transportation-item{
+	flex-basis: 100%;
+	margin: 0 1.5%;
+	vertical-align: top;
+}
+
+.lodging-item{
+	flex-basis: 100%;
+	margin: 0 1.5%;
+	vertical-align: top;
+}
 
 
 
