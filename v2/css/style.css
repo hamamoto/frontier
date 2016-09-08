@@ -928,7 +928,7 @@ filter: grayscale(80%);*/
 
 	#about p {
 		width: 100%;
-		font-size: 24px;
+		font-size: 18px;
 		margin: 0px;
 		margin-bottom: 30px;
 	}
@@ -977,7 +977,7 @@ filter: grayscale(80%);*/
 	}
 
 	#registration-info p{
-		font-size: 20px;
+		font-size: 18px;
 		margin-bottom: 40px;
 		margin-left: 10px;
 		margin-right: 0px;
@@ -1003,7 +1003,7 @@ filter: grayscale(80%);*/
 
 #about-location p{
 
-	font-size: 16px;
+	font-size: 18px;
 }
 	#transportation-item{
 	flex-basis: 100%;
@@ -1015,6 +1015,10 @@ filter: grayscale(80%);*/
 	flex-basis: 100%;
 	margin: 0 1.5%;
 	vertical-align: top;
+}
+
+#directions-info p {
+    font-size: 14px;
 }
 
 
