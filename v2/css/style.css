@@ -1021,6 +1021,11 @@ filter: grayscale(80%);*/
     font-size: 14px;
 }
 
+	/* Special CSS for Colophon */
+#colophon-item p {
+    width:100%;
+}
+
 
 
 
