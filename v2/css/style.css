@@ -253,6 +253,10 @@ a:hover{
 	font-weight: bold;
 }
 
+.info{
+	font-style: italic;
+}
+
 /* People */
 .talk-contain{
 	position:relative;
