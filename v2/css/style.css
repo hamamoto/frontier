@@ -557,6 +557,19 @@ filter: grayscale(80%);*/
 	width:50%;
 }
 
+.sponsor{
+	position:relative;
+	width:25%;
+}
+
+
+ .sponsor img{
+ 	position:relative;
+	width: 100%;
+
+}
+
+
 
 #images-holder {
 	position: fixed;
@@ -1029,6 +1042,8 @@ filter: grayscale(80%);*/
 #colophon-item p {
     width:100%;
 }
+
+
 
 
 
