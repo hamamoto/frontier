@@ -191,97 +191,88 @@ $(document).ready(function() {
 
 
 
-	// get talks description
 
-	 // ID of the Google Spreadsheet
-	var spreadsheetID = "SPREADSHEET KEY";
+	function getSchedule(sheet){
 
-	// Make sure it is public or set to Anyone with link can view
-	var url = "https://spreadsheets.google.com/feeds/list/1Bq5TQsknqSHRYumJM5rsoe-wfLxQDXNqMBsXOh55fGY/od6/public/values?alt=json";
+	 	var url = "https://spreadsheets.google.com/feeds/list/" + sheet + "/default/public/values?alt=json";
 
-	$.getJSON(url, function(data) {
 
-		var entry = data.feed.entry;
+		$.getJSON(url, function(data) {
 
-		$(entry).each(function(){
-			
-			//remove @ from social media handle
-			var socialhandle = this.gsx$social1.$t
-			var cleansocialhandle = socialhandle.replace('@','');
 
-			// Column names are name, age, etc.
-			$('#people').prepend(
-			'<div class="talk-contain wide"><a id="expand"><p>+</p></a><ul class="talk"><li data-image="'
-			+cleansocialhandle+
-			'" class="title image-hover">'
-			+this.gsx$title.$t+
-			'</li></ul><ul class="details hide"><li class="presenter">'
-			+this.gsx$name1.$t+'</li><li class="institution">'+this.gsx$institution1.$t+
-			'</li><li class="presenter">'
-			+this.gsx$name2.$t+'</li><li class="institution">'+this.gsx$institution2.$t+
-			'</li><li class="presenter">'
-			+this.gsx$name3.$t+'</li><li class="institution">'+this.gsx$institution3.$t+
-			'</li><li class="presenter">'
-			+this.gsx$name4.$t+'</li><li class="institution">'+this.gsx$institution4.$t+
-			'</li><li class="presenter">'
-			+this.gsx$name5.$t+'</li><li class="institution">'+this.gsx$institution5.$t+
-			'</li><li class="desc">'
-			+this.gsx$desc.$t+
-			'</li><li class="bio">'
-			+this.gsx$bio1.$t+
-			'<li class="links"><a href="'
-			+this.gsx$web1.$t+
-			' target="_blank">'
-			+this.gsx$web1.$t+
-			'</a></li><li class="links"><a href="https://twitter.com/'
-			+this.gsx$social1.$t+
-			'" target="_blank">'
-			+this.gsx$social1.$t+
-			'</a></li><li class="bio">'
-			+this.gsx$bio2.$t+
-			'<li class="links"><a href="'
-			+this.gsx$web2.$t+
-			' target="_blank">'
-			+this.gsx$web2.$t+
-			'</a></li><li class="links"><a href="https://twitter.com/'
-			+this.gsx$social2.$t+
-			'" target="_blank">'
-			+this.gsx$social2.$t+
-			'</a></li><li class="bio">'
-			+this.gsx$bio3.$t+
-			'<li class="links"><a href="'
-			+this.gsx$web3.$t+
-			' target="_blank">'
-			+this.gsx$web3.$t+
-			'</a></li><li class="links"><a href="https://twitter.com/'
-			+this.gsx$social3.$t+
-			'" target="_blank">'
-			+this.gsx$social3.$t+
-			'</a></li><li class="bio">'
-			+this.gsx$bio4.$t+
-			'<li class="links"><a href="'
-			+this.gsx$web4.$t+
-			' target="_blank">'
-			+this.gsx$web4.$t+
-			'</a></li><li class="links"><a href="https://twitter.com/'
-			+this.gsx$social4.$t+
-			'" target="_blank">'
-			+this.gsx$social4.$t+
-			'</a></li><li class="bio">'
-			+this.gsx$bio5.$t+
-			'<li class="links"><a href="'
-			+this.gsx$web5.$t+
-			' target="_blank">'
-			+this.gsx$web5.$t+
-			'</a></li><li class="links"><a href="https://twitter.com/'
-			+this.gsx$social5.$t+
-			'" target="_blank">'
-			+this.gsx$social5.$t+
-			'</a></li></ul></div>'
-			);
+			var entry = data.feed.entry;
+
+			$(entry).each(function(){
+				
+				//remove @ from social media handle
+				var socialhandle = this.gsx$social1.$t
+				var cleansocialhandle = socialhandle.replace('@','');
+
+				// Column names are name, age, etc.
+				$('#people').prepend(
+				'<div class="talk-contain wide"><a id="expand"><p>+</p></a><ul class="talk"><li data-image="'
+				+cleansocialhandle+
+				'" class="title image-hover">'
+				+this.gsx$title.$t+
+				'</li></ul><ul class="details hide"><li class="presenter">'
+				+this.gsx$name1.$t+'</li><li class="institution">'+this.gsx$institution1.$t+
+				'</li><li class="presenter">'
+				+this.gsx$name2.$t+'</li><li class="institution">'+this.gsx$institution2.$t+
+				'</li><li class="presenter">'
+				+this.gsx$name3.$t+'</li><li class="institution">'+this.gsx$institution3.$t+
+				'</li><li class="presenter">'
+				+this.gsx$name4.$t+'</li><li class="institution">'+this.gsx$institution4.$t+
+				'</li><li class="presenter">'
+				+this.gsx$name5.$t+'</li><li class="institution">'+this.gsx$institution5.$t+
+				'</li><li class="desc">'
+				+this.gsx$desc.$t+
+				'</li><li class="bio">'
+				+this.gsx$bio1.$t+
+				'<li class="links"><a href="'+this.gsx$web1.$t+' target="_blank">'
+				+this.gsx$web1.$t+
+				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social1.$t+'" target="_blank">'
+				+this.gsx$social1.$t+
+				'</a></li><li class="bio">'
+				+this.gsx$bio2.$t+
+				'<li class="links"><a href="'+this.gsx$web2.$t+' target="_blank">'
+				+this.gsx$web2.$t+
+				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social2.$t+'" target="_blank">'
+				+this.gsx$social2.$t+
+				'</a></li><li class="bio">'
+				+this.gsx$bio3.$t+
+				'<li class="links"><a href="'+this.gsx$web3.$t+' target="_blank">'
+				+this.gsx$web3.$t+
+				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social3.$t+'" target="_blank">'
+				+this.gsx$social3.$t+
+				'</a></li><li class="bio">'
+				+this.gsx$bio4.$t+
+				'<li class="links"><a href="'+this.gsx$web4.$t+' target="_blank">'
+				+this.gsx$web4.$t+
+				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social4.$t+'" target="_blank">'
+				+this.gsx$social4.$t+
+				'</a></li><li class="bio">'
+				+this.gsx$bio5.$t+
+				'<li class="links"><a href="'+this.gsx$web5.$t+' target="_blank">'
+				+this.gsx$web5.$t+
+				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social5.$t+'" target="_blank">'
+				+this.gsx$social5.$t+
+				'</a></li></ul></div>'
+				);
+			});
+
+			$('#people').prepend('<br /><br /><h3>' + data.feed.title.$t + '</h3>');
+
 		});
+	}
 
-	});
+	// spreadsheet one
+	getSchedule('1zEK2_4zqdrkhuAOJxUsT0CSt4HRg53dQaG8IGCVjQUI');
+
+	// spreadsheet two
+	getSchedule('117hcEMPkGIAysMi0NUYEZEv4X8JxH6e-qyeP8j1xVto');
+
+
+
 });
 
 
