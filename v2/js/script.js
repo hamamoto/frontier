@@ -228,36 +228,36 @@ $(document).ready(function() {
 				+this.gsx$desc.$t+
 				'</li><li class="bio">'
 				+this.gsx$bio1.$t+
-				'<li class="links"><a href="'+this.gsx$web1.$t+' target="_blank">'
+				'<li class="links"><a href="'+String(this.gsx$web1.$t+'" target="_blank">'
 				+this.gsx$web1.$t+
 				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social1.$t+'" target="_blank">'
 				+this.gsx$social1.$t+
 				'</a></li><li class="bio">'
 				+this.gsx$bio2.$t+
-				'<li class="links"><a href="'+this.gsx$web2.$t+' target="_blank">'
+				'<li class="links"><a href="'+this.gsx$web2.$t+'" target="_blank">'
 				+this.gsx$web2.$t+
 				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social2.$t+'" target="_blank">'
 				+this.gsx$social2.$t+
 				'</a></li><li class="bio">'
 				+this.gsx$bio3.$t+
-				'<li class="links"><a href="'+this.gsx$web3.$t+' target="_blank">'
+				'<li class="links"><a href="'+this.gsx$web3.$t+'" target="_blank">'
 				+this.gsx$web3.$t+
 				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social3.$t+'" target="_blank">'
 				+this.gsx$social3.$t+
 				'</a></li><li class="bio">'
 				+this.gsx$bio4.$t+
-				'<li class="links"><a href="'+this.gsx$web4.$t+' target="_blank">'
+				'<li class="links"><a href="'+this.gsx$web4.$t+'" target="_blank">'
 				+this.gsx$web4.$t+
 				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social4.$t+'" target="_blank">'
 				+this.gsx$social4.$t+
 				'</a></li><li class="bio">'
 				+this.gsx$bio5.$t+
-				'<li class="links"><a href="'+this.gsx$web5.$t+' target="_blank">'
+				'<li class="links"><a href="'+this.gsx$web5.$t+'" target="_blank">'
 				+this.gsx$web5.$t+
 				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social5.$t+'" target="_blank">'
 				+this.gsx$social5.$t+
 				'</a></li></ul></div>'
-				);
+				));
 			});
 
 			$('#people').prepend('<br /><br /><h3>' + data.feed.title.$t + '</h3>');
