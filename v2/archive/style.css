@@ -184,10 +184,6 @@ a:hover{
 	padding-left: 20px;
 }
 
-.room{
-	padding-left: 35px;
-}
-
 
 /* Frontier */
 
@@ -366,7 +362,7 @@ a:hover{
 		font-size:18px;
 	}
 
-	.presenter, .time {
+	.presenter {
 		padding-left: 35px;
 	}
 
@@ -378,7 +374,6 @@ a:hover{
 
 	.desc{
 		opacity: 0;
-		margin-top: 15px;
 		margin-bottom: 15px;
 	}
 
@@ -488,12 +483,6 @@ p.note {
 	font-size: 14px;
 	font-weight: normal;
 	text-decoration: underline;
-	margin-bottom: 20px;
-}
-
-h4{
-	font-size: 14px;
-	font-weight: normal;
 	margin-bottom: 20px;
 }
 

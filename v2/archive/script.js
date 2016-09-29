@@ -185,7 +185,7 @@ $(document).ready(function() {
 
 
 
-	function getSchedule(sheet, div){
+	function getSchedule(sheet){
 
 	 	var url = "https://spreadsheets.google.com/feeds/list/" + sheet + "/default/public/values?alt=json";
 
@@ -202,7 +202,7 @@ $(document).ready(function() {
 				var cleansocialhandle = socialhandle.replace('@','');
 
 				// Column names are name, age, etc.
-				$('#'+div).prepend(
+				$('#people').prepend(
 				'<div class="talk-contain wide"><a id="expand"><p>+</p></a><ul class="talk"><li data-image="'
 				+cleansocialhandle+
 				'" class="title image-hover">'
@@ -249,13 +249,11 @@ $(document).ready(function() {
 				+this.gsx$web5.$t+
 				'</a></li><li class="links"><a href="https://twitter.com/'+this.gsx$social5.$t+'" target="_blank">'
 				+this.gsx$social5.$t+
-				'</a></li><li class="room"><em>'
-				+this.gsx$location.$t+
-				'</em></li></ul></div>'
+				'</a></li></ul></div>'
 				));
 			});
 
-			$('#'+div).prepend('<br /><br /><h4>' + data.feed.title.$t + '</h4>');
+			$('#people').prepend('<br /><br /><h3>' + data.feed.title.$t + '</h3>');
 
 		});
 	}
@@ -263,36 +261,37 @@ $(document).ready(function() {
 	
 
 
+	
 
 	// Saturday AM Workshops
-	getSchedule('1Imfha2zSoDrT1G5RpyDYd519OlT2ADQtvW8V_yxOrhw', 'sat-am');
+	getSchedule('1Imfha2zSoDrT1G5RpyDYd519OlT2ADQtvW8V_yxOrhw');
 
 	// Saturday AM Breakout Sessions
-	getSchedule('1LAxLqepud9POPT59Dw4wosZ1v4GnO5IGl39z0GjetT0', 'sat-am-breakout');
+	getSchedule('1LAxLqepud9POPT59Dw4wosZ1v4GnO5IGl39z0GjetT0');
 
 	// Saturday PM Workshops
-	getSchedule('1ZMNWUcZ7vSwdZ0dUDaW4ni2UF4YKBPrEfNC1UzFL0vc', 'sat-pm');
+	getSchedule('1ZMNWUcZ7vSwdZ0dUDaW4ni2UF4YKBPrEfNC1UzFL0vc');
 
 	// Saturday PM Breakout Sessions
-	getSchedule('1zY88BgY-C44kbxTaov5QKgJYeOmvj0G_pjn5Ee7T9f8', 'sat-pm-breakout');
+	getSchedule('1zY88BgY-C44kbxTaov5QKgJYeOmvj0G_pjn5Ee7T9f8');
 
-	// // Saturday After Hours
-	getSchedule('1LlTGuCxX15tVaWQvjlTVEGOR-8lbSyi-hFn3czEXxO4', 'sat-after-hours');
+	// Saturday After Hours
+	getSchedule('1LlTGuCxX15tVaWQvjlTVEGOR-8lbSyi-hFn3czEXxO4');
 
 	// Sunday AM Workshops
-	getSchedule('1GUnTGfIKDB7XD8wDHrPNdg8kHSsxtrhEUHtiSDEEawc', 'sun-am');
+	getSchedule('1GUnTGfIKDB7XD8wDHrPNdg8kHSsxtrhEUHtiSDEEawc');
 
 	// Sunday AM Breakout Sessions
-	getSchedule('1orGpceKhdOiBLP8DK8KKMfFCVQ0HdoJdDixZ7KJHPJw', 'sun-am-breakout');
+	getSchedule('1orGpceKhdOiBLP8DK8KKMfFCVQ0HdoJdDixZ7KJHPJw');
 
 	// Sunday PM Workshops
-	getSchedule('18HQ4ASkcs-uGVbSQRTtNeqnIlR5BqsWK5qmx20Dd8mc', 'sun-pm');
+	getSchedule('18HQ4ASkcs-uGVbSQRTtNeqnIlR5BqsWK5qmx20Dd8mc');
 
 	// Sunday PM Workshops (XL)
-	getSchedule('1BYBvoAbzMF_OihNKIiwHdA1Kb-o31HqBTxkR0n44Rdw', 'sun-pm-xl');
+	getSchedule('1BYBvoAbzMF_OihNKIiwHdA1Kb-o31HqBTxkR0n44Rdw');
 
 	// Sunday PM Breakout Sessions
-	getSchedule('1aAwG4WsFysdMHoExf1TTtMlUVqTqhDrCBJiSOPYcAwo', 'sun-pm-breakout');
+	getSchedule('1aAwG4WsFysdMHoExf1TTtMlUVqTqhDrCBJiSOPYcAwo');
 
 
 
