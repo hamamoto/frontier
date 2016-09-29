@@ -299,8 +299,6 @@ a:hover{
 #expand{
 	position:absolute;
 	left:0%;
-	position: -webkit-sticky;
-	position: sticky;
 	top: 0%;
 	z-index: 100;
 	cursor:pointer;
@@ -327,16 +325,7 @@ a:hover{
 	-moz-transition: opacity 1s ease-in-out;
 	-webkit-transition: opacity 1s ease-in-out;
 }
-.sticky {
-	position: -webkit-sticky;
-	position: sticky;
-}
 
-/*.sticky:before,
-.sticky:after {
-    content: '';
-    display: table;
-    }*/
 
 
     #people{
@@ -805,7 +794,7 @@ filter: grayscale(80%);*/
 
 .menuIcon{
 	position:fixed;
-	top:1%;
+	top:3%;
 	width:30px;
 	height:30px;
 }
